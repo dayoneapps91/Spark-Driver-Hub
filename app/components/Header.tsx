@@ -1,3 +1,6 @@
+"use client";
+
+import { trackGigMilesClick } from "../lib/analytics";
 import { navigationLinks } from "../lib/navigation";
 
 export default function Header() {
@@ -34,6 +37,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="/gigmiles"
+            onClick={() => trackGigMilesClick("header_desktop")}
             className="hidden rounded-full bg-blue-700 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 sm:inline-flex"
           >
             Get GigMiles
@@ -58,6 +62,7 @@ export default function Header() {
 
                 <a
                   href="/gigmiles"
+                  onClick={() => trackGigMilesClick("header_mobile_menu")}
                   className="mt-2 rounded-2xl bg-blue-700 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-blue-800"
                 >
                   Download GigMiles

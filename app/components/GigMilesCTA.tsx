@@ -1,3 +1,7 @@
+"use client";
+
+import { trackGigMilesClick } from "../lib/analytics";
+
 export default function GigMilesCTA() {
   return (
     <section className="rounded-3xl bg-slate-950 px-6 py-10 text-white sm:px-10 lg:px-12">
@@ -20,6 +24,7 @@ export default function GigMilesCTA() {
         <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
           <a
             href="/gigmiles"
+            onClick={() => trackGigMilesClick("cta")}
             className="rounded-full bg-blue-600 px-6 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-blue-700"
           >
             Learn about GigMiles
