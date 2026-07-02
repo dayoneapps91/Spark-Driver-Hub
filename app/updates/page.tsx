@@ -4,39 +4,39 @@ import PageHero from "../components/PageHero";
 
 const updates = [
   {
-    title: "Spark Driver Newsletter Summaries",
+    title: "📬 Monthly Newsletter Summaries",
     description:
-      "Monthly Spark newsletter breakdowns will be added here with simple explanations for drivers.",
-    href: "/updates/june-2026",
+      "Browse monthly Spark Driver newsletter summaries with practical explanations and key highlights for drivers.",
+    href: "/updates/newsletters",
   },
- {
-  title: "Spark Platform Updates",
-  description:
-    "Follow practical updates related to Spark driving, app changes, driver reminders, and record keeping.",
-  href: "/updates/platform",
-},
   {
-    title: "Tax and Mileage Reminders",
+    title: "⚡ Latest Spark Platform Updates",
+    description:
+      "Follow important Spark app changes, Express Shopping updates, driver reminders, and platform announcements.",
+    href: "/updates/platform",
+  },
+  {
+    title: "📋 Tax and Mileage Reminders",
     description:
       "Important reminders about mileage tracking, expense records, and tax-season preparation.",
     href: "/taxes",
   },
   {
-    title: "GigMiles Updates",
+    title: "🚗 GigMiles Updates",
     description:
-      "New GigMiles features, improvements, and tools for Spark drivers will be shared here.",
+      "New GigMiles features, improvements, and tools for Spark drivers.",
     href: "/gigmiles",
   },
   {
-    title: "Driver Resource Updates",
+    title: "📚 Driver Resource Updates",
     description:
-      "New guides, checklists, and resources added to Spark Driver Hub.",
+      "New guides, checklists, and educational resources added to Spark Driver Hub.",
     href: "/guides",
   },
   {
-    title: "Start with Mileage Tracking",
+    title: "📍 Start with Mileage Tracking",
     description:
-      "If you are new here, start by learning how Spark drivers can track mileage and records.",
+      "New to Spark? Learn how to track mileage, expenses, and earnings correctly from day one.",
     href: "/mileage",
   },
 ];
@@ -47,7 +47,7 @@ export default function UpdatesPage() {
       <PageHero
         eyebrow="Updates"
         title="Spark Driver Updates"
-        description="Follow Spark-related updates, newsletter summaries, driver reminders, tax-season notes, and GigMiles updates in one place."
+        description="Follow Spark-related updates, monthly newsletter summaries, platform changes, driver reminders, tax-season notes, and GigMiles updates in one place."
       />
 
       <section className="bg-slate-50">
