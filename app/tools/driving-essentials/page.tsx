@@ -54,13 +54,14 @@ export default function DrivingEssentialsPage() {
             <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950">
               Driver Tools
             </span>
+
             <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-200 ring-1 ring-white/15">
               Driving Essentials
             </span>
           </div>
 
           <h1 className="mt-8 text-5xl font-black tracking-tight text-white md:text-6xl">
-            Driving Essentials for Spark Drivers
+            Gear Worth Buying
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
@@ -69,26 +70,25 @@ export default function DrivingEssentialsPage() {
             money on random accessories.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
                 Built For
               </p>
-              <p className="mt-2 text-2xl font-black">Delivery days</p>
+
+              <p className="mt-2 text-2xl font-black">
+                Spark Drivers
+              </p>
             </div>
 
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
-                Focus
+                Updated
               </p>
-              <p className="mt-2 text-2xl font-black">Useful gear</p>
-            </div>
 
-            <div className="rounded-3xl bg-orange-400 p-5 text-slate-950">
-              <p className="text-xs font-black uppercase tracking-[0.18em]">
-                First Guide
+              <p className="mt-2 text-2xl font-black">
+                July 2026
               </p>
-              <p className="mt-2 text-2xl font-black">Phone mounts</p>
             </div>
           </div>
         </div>
@@ -100,6 +100,7 @@ export default function DrivingEssentialsPage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
               Buying Guides
             </p>
+
             <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
               The best gear for Spark drivers.
             </h2>
