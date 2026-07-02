@@ -3,7 +3,7 @@ import Link from "next/link";
 const guides = [
   {
     title: "Best Phone Mounts",
-    eyebrow: "Flagship Guide",
+    eyebrow: "Most Popular",
     description:
       "Secure dashboard, windshield, vent, and MagSafe mounts built for delivery shifts, navigation, and constant stops.",
     href: "/tools/driving-essentials/best-phone-mounts",
@@ -11,7 +11,7 @@ const guides = [
   },
   {
     title: "Best Car Chargers",
-    eyebrow: "Coming Next",
+    eyebrow: "Coming Soon",
     description:
       "Fast car chargers and adapters that keep your phone powered while running Spark, GPS, music, and messages.",
     href: "/tools/driving-essentials/best-car-chargers",
@@ -19,7 +19,7 @@ const guides = [
   },
   {
     title: "Best Power Banks",
-    eyebrow: "Backup Power",
+    eyebrow: "Coming Soon",
     description:
       "Portable battery packs for long delivery days, emergencies, and drivers who do not want battery anxiety.",
     href: "/tools/driving-essentials/best-power-banks",
@@ -27,7 +27,7 @@ const guides = [
   },
   {
     title: "Best USB-C Cables",
-    eyebrow: "Daily Use",
+    eyebrow: "Coming Soon",
     description:
       "Durable charging cables that can handle repeated plugging, unplugging, and everyday vehicle use.",
     href: "/tools/driving-essentials/best-usb-c-cables",
@@ -35,7 +35,7 @@ const guides = [
   },
   {
     title: "Charging Accessories",
-    eyebrow: "Setup Helpers",
+    eyebrow: "Coming Soon",
     description:
       "Cable organizers, extra adapters, and small accessories that make your driving setup cleaner and easier.",
     href: "/tools/driving-essentials/charging-accessories",
@@ -72,23 +72,23 @@ export default function DrivingEssentialsPage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
-                Current Focus
+                Built For
               </p>
-              <p className="mt-2 text-2xl font-black">Top 5 tools</p>
+              <p className="mt-2 text-2xl font-black">Delivery days</p>
             </div>
 
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
-                Monetization
+                Focus
               </p>
-              <p className="mt-2 text-2xl font-black">Amazon</p>
+              <p className="mt-2 text-2xl font-black">Useful gear</p>
             </div>
 
             <div className="rounded-3xl bg-orange-400 p-5 text-slate-950">
               <p className="text-xs font-black uppercase tracking-[0.18em]">
-                Standard
+                First Guide
               </p>
-              <p className="mt-2 text-2xl font-black">Premium</p>
+              <p className="mt-2 text-2xl font-black">Phone mounts</p>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function DrivingEssentialsPage() {
               Buying Guides
             </p>
             <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
-              Start with the tools drivers actually use.
+              The best gear for Spark drivers.
             </h2>
           </div>
 
@@ -151,22 +151,6 @@ export default function DrivingEssentialsPage() {
             </Link>
           ))}
         </div>
-      </section>
-
-      <section className="mt-16 rounded-[2rem] bg-white p-8 shadow-lg ring-1 ring-slate-200/70 md:p-10">
-        <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
-          Build Order
-        </p>
-
-        <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
-          The next buying guides should match the Phone Mounts standard.
-        </h2>
-
-        <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
-          Phone Mounts is now the visual reference. The next guides should use
-          the same premium card system, one clean product image per item, real
-          Amazon affiliate links, a comparison table, and a driver-first note.
-        </p>
       </section>
     </main>
   );
