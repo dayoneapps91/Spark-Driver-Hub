@@ -12,6 +12,10 @@ export const navigationLinks = [
     href: "/guides",
   },
   {
+    name: "Tools",
+    href: "/tools",
+  },
+  {
     name: "Taxes",
     href: "/taxes",
   },
