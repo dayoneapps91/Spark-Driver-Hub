@@ -83,7 +83,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-white/10 p-5 shadow-2xl ring-1 ring-white/15 backdrop-blur">
+          <div className="hidden rounded-[2rem] bg-white/10 p-5 shadow-2xl ring-1 ring-white/15 backdrop-blur md:block">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
               Built for drivers who want better records
             </p>
