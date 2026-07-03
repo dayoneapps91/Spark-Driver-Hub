@@ -77,7 +77,7 @@ export default function Header() {
             </summary>
 
             <div className="absolute right-0 mt-4 w-[15rem]w-hidden rounded-[2rem] border border-white/80 bg-white/95 p-3 shadow-[0_32px_100px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 backdrop-blur-xl">
-              <div className="inline-flex max-w-fit rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-slate-800 px-4 py-3 text-white">
+              <div className="mx-auto flex w-[12.5rem] items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-slate-800 py-3 text-white">
                 <p className="text-sm font-black tracking-tight">
                   Spark Driver Hub
                 </p>
