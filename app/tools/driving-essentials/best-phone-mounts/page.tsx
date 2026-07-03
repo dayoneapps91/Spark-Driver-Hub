@@ -181,11 +181,6 @@ function PhoneMountHero() {
             <h2 className="mt-3 text-3xl font-black tracking-tight">
               iOttie Easy One Touch
             </h2>
-            <p className="mt-3 text-sm font-semibold leading-7 text-slate-600">
-              Stable, flexible, and practical for daily Spark driving with most
-              phones and cases.
-            </p>
-
             <div className="mt-5 grid grid-cols-2 gap-3">
               <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
                 <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-500">
