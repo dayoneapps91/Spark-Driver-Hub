@@ -6,6 +6,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sparkdriverhub.com"),
+  icons: {
+  icon: "/icon.png",
+  apple: "/apple-icon.png",
+},
   title: {
     default: "Spark Driver Hub | Mileage, Taxes, Updates & Tools",
     template: "%s | Spark Driver Hub",
