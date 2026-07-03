@@ -76,7 +76,7 @@ export default function Header() {
               <span className="hidden group-open:inline">×</span>
             </summary>
 
-            <div className="absolute right-0 mt-4 w-[15.75rem] overflow-hidden rounded-[2rem] border border-white/80 bg-white/95 p-3 shadow-[0_32px_100px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 backdrop-blur-xl">
+            <div className="absolute right-0 mt-4 w-[15rem]w-hidden rounded-[2rem] border border-white/80 bg-white/95 p-3 shadow-[0_32px_100px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 backdrop-blur-xl">
               <div className="inline-flex max-w-fit rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-slate-800 px-4 py-3 text-white">
                 <p className="text-sm font-black tracking-tight">
                   Spark Driver Hub
@@ -107,7 +107,7 @@ export default function Header() {
                         {navIcons[link.name] ?? "→"}
                       </span>
 
-                      <span className="ml-5">{link.name}</span>
+                      <span className="ml-8 flex-1 text-left">{link.name}</span>
                     </a>
                   );
                 })}
@@ -115,7 +115,7 @@ export default function Header() {
                 <a
                   href="/gigmiles"
                   onClick={() => trackGigMilesClick("header_mobile_menu")}
-                  className="mx-auto mt-3 flex w-[14rem] items-center justify-center rounded-2xl bg-gradient-to-r from-orange-600 to-orange-500 px-4 py-3 text-sm font-black text-white shadow-lg shadow-orange-600/20 transition duration-200 hover:-translate-y-0.5 hover:from-orange-500 hover:to-orange-400"
+                  className="mx-auto mt-3 flex w-[12.5rem] items-center justify-center rounded-2xl bg-gradient-to-r from-orange-600 to-orange-500 px-4 py-3 text-sm font-black text-white shadow-lg shadow-orange-600/20 transition duration-200 hover:-translate-y-0.5 hover:from-orange-500 hover:to-orange-400"
                 >
                   Download GigMiles →
                 </a>
