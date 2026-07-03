@@ -114,7 +114,7 @@ function AppStoreButton({ className = "" }: { className?: string }) {
       href={googlePlayUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-2xl bg-blue-700 px-6 py-3 text-center text-sm font-black text-white shadow-lg shadow-blue-950/20 transition duration-200 hover:-translate-y-0.5 hover:bg-blue-800 ${className}`}
+      className={`inline-flex items-center justify-center rounded-2xl bg-orange-500 px-6 py-3 text-center text-sm font-black text-slate-950 shadow-lg shadow-orange-950/20 transition duration-200 hover:-translate-y-0.5 hover:bg-orange-400 ${className}`}
     >
       Get GigMiles on Google Play
     </a>
@@ -183,7 +183,7 @@ export default function GigMilesPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <AppStoreButton className="bg-white text-slate-950 hover:bg-orange-400" />
+                <AppStoreButton />
                 <a
                   href="#screenshots"
                   className="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-black text-white ring-1 ring-white/15 transition duration-200 hover:-translate-y-0.5 hover:bg-white/15"
@@ -192,7 +192,7 @@ export default function GigMilesPage() {
                 </a>
               </div>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="mt-8 hidden gap-4 sm:grid sm:grid-cols-3">
                 {["Mileage", "Earnings", "Expenses"].map((label) => (
                   <div
                     key={label}
@@ -312,9 +312,9 @@ export default function GigMilesPage() {
           {screenshots.map((screenshot) => (
             <div
               key={screenshot.title}
-              className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]"
+              className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]"
             >
-              <div className="p-6">
+              <div className="p-6 xl:min-h-[170px]">
                 <h3 className="text-xl font-black text-slate-950">
                   {screenshot.title}
                 </h3>
@@ -323,7 +323,7 @@ export default function GigMilesPage() {
                 </p>
               </div>
 
-              <div className="flex h-96 items-center justify-center bg-slate-950 p-4 sm:h-[32rem] xl:h-80">
+              <div className="mt-auto flex h-96 items-center justify-center bg-slate-950 p-4 sm:h-[32rem] xl:h-80">
                 <Image
                   src={screenshot.src}
                   alt={screenshot.alt}
