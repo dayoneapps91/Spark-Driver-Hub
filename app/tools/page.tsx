@@ -3,9 +3,9 @@ import Link from "next/link";
 const categories = [
   {
     title: "Driving Essentials",
-    label: "Most Popular",
+    label: "Featured",
     description:
-      "Phone mounts, power banks, chargers, cables, and everyday accessories that make deliveries easier.",
+      "Phone mounts, car chargers, power banks, cables, and everyday accessories that make deliveries easier.",
     href: "/tools/driving-essentials",
   },
   {
@@ -17,16 +17,16 @@ const categories = [
   },
   {
     title: "Car Organization",
-    label: "Coming Soon",
+    label: "Live",
     description:
-      "Keep your vehicle clean and organized with practical storage and interior accessories.",
+      "Practical trunk organizers, storage solutions, and accessories that keep your vehicle clean and efficient.",
     href: "/tools/car-organization",
   },
   {
     title: "Safety Equipment",
-    label: "Coming Soon",
+    label: "Live",
     description:
-      "Dash cams, reflective gear, flashlights, and safety products every driver should consider.",
+      "Dash cams, flashlights, reflective gear, and safety essentials for everyday delivery driving.",
     href: "/tools/safety-equipment",
   },
   {
@@ -38,9 +38,9 @@ const categories = [
   },
   {
     title: "Sun Protection",
-    label: "Coming Soon",
+    label: "Live",
     description:
-      "Sun sleeves, hats, sunglasses, sunscreen, and accessories to stay comfortable during hot delivery days.",
+      "Sunshades, cooling sleeves, sunglasses, sunscreen, hats, and gear for hot delivery days.",
     href: "/tools/sun-protection",
   },
   {
