@@ -19,7 +19,7 @@ return(
 <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950">Taxes</span>
 <h1 className="mt-8 text-5xl font-black tracking-tight md:text-6xl">Tax Resources</h1>
 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Learn how to organize mileage, expenses, earnings, and records before tax season. These guides are educational and built for Walmart Spark drivers.</p>
-<div className="mt-8 grid gap-4 sm:grid-cols-2">
+<div className="mt-8 hidden gap-4 md:grid md:grid-cols-2">
 <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15"><p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Focus</p><p className="mt-2 text-2xl font-black">Better records</p></div>
 <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15"><p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Goal</p><p className="mt-2 text-2xl font-black">Tax ready</p></div>
 </div></div></section>

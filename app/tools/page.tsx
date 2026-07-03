@@ -72,7 +72,7 @@ export default function DriverToolsPage() {
             deliveries more efficient.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 hidden gap-4 md:grid md:grid-cols-2">
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Built For</p>
               <p className="mt-2 text-2xl font-black">Spark Drivers</p>
