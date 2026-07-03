@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import AffiliateDisclosure from "../../../components/AffiliateDisclosure";
 import BuyingGuideLayout from "../../../components/BuyingGuideLayout";
 import ToolComparisonTable from "../../../components/ToolComparisonTable";
-import ToolHero from "../../../components/ToolHero";
 import ToolRecommendationCard from "../../../components/ToolRecommendationCard";
 
 export const metadata: Metadata = {
@@ -55,10 +54,7 @@ const products = [
       "Good for larger phones",
       "Strong value for delivery work",
     ],
-    cons: [
-      "Bulkier design",
-      "May feel overbuilt for small cars",
-    ],
+    cons: ["Bulkier design", "May feel overbuilt for small cars"],
     sparkDriverNote:
       "This is the practical pick if your current mount shakes, falls, or struggles with a larger phone like a Pro Max, Galaxy Ultra, or thick case.",
   },
@@ -79,10 +75,7 @@ const products = [
       "Great for MagSafe users",
       "Simple to move between routes",
     ],
-    cons: [
-      "Not ideal without MagSafe",
-      "Magnetic strength depends on case quality",
-    ],
+    cons: ["Not ideal without MagSafe", "Magnetic strength depends on case quality"],
     sparkDriverNote:
       "Good for drivers who constantly get in and out of the car and want to snap the phone on quickly between pickups and drop-offs.",
   },
@@ -103,10 +96,7 @@ const products = [
       "Helpful for long delivery days",
       "Good fit for newer iPhones",
     ],
-    cons: [
-      "More expensive",
-      "Best value only if you need charging",
-    ],
+    cons: ["More expensive", "Best value only if you need charging"],
     sparkDriverNote:
       "Choose this if your battery dies during Spark blocks or you hate managing a cable every time you start driving.",
   },
@@ -136,16 +126,91 @@ const products = [
   },
 ];
 
+function PhoneMountHero() {
+  return (
+    <section className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:p-10 lg:p-12">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.38),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(251,146,60,0.28),transparent_34%)]" />
+      <div className="absolute right-8 top-8 hidden h-44 w-44 rounded-full bg-white/10 blur-3xl lg:block" />
+
+      <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div>
+          <div className="flex flex-wrap gap-3">
+            <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950 shadow-lg shadow-black/10">
+              Driving Essentials
+            </span>
+            <span className="inline-flex rounded-full bg-orange-400/15 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-200 ring-1 ring-orange-300/25">
+              Buying Guide
+            </span>
+          </div>
+
+          <h1 className="mt-7 max-w-4xl text-5xl font-black tracking-[-0.055em] text-white md:text-6xl lg:text-7xl">
+            Best Phone Mounts for Spark Drivers
+          </h1>
+
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl md:leading-9">
+            A phone mount is one of the few delivery tools that can make every
+            single order easier. The right one keeps navigation visible, reduces
+            distractions, and helps your car feel more organized during long
+            Spark shifts.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              "7 min read",
+              "Updated July 2026",
+              "Dashboard",
+              "Vent",
+              "MagSafe",
+              "Wireless charging",
+            ].map((pill) => (
+              <span
+                key={pill}
+                className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-slate-100 ring-1 ring-white/15 backdrop-blur"
+              >
+                {pill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur md:p-6">
+          <div className="rounded-[1.5rem] bg-white p-5 text-slate-950 shadow-2xl">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-orange-600">
+              Top Pick
+            </p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight">
+              iOttie Easy One Touch
+            </h2>
+            <p className="mt-3 text-sm font-semibold leading-7 text-slate-600">
+              Stable, flexible, and practical for daily Spark driving with most
+              phones and cases.
+            </p>
+
+            <div className="mt-5 grid grid-cols-2 gap-3">
+              <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-500">
+                  Score
+                </p>
+                <p className="mt-2 text-2xl font-black">9.6/10</p>
+              </div>
+              <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-500">
+                  Best For
+                </p>
+                <p className="mt-2 text-lg font-black">Most drivers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function BestPhoneMountsPage() {
   return (
     <BuyingGuideLayout>
-      <ToolHero
-        category="Driving Essentials"
-        title="Best Phone Mounts for Spark Drivers"
-        description="A phone mount is one of the few delivery tools that can make every single order easier. The right one keeps navigation visible, reduces distractions, and helps your car feel more organized during long Spark shifts."
-        readingTime="7 min read"
-        lastUpdated="July 2026"
-      />
+      <PhoneMountHero />
 
       <section className="grid gap-6 rounded-[2rem] bg-slate-950 p-6 text-white shadow-xl md:grid-cols-3 md:p-8">
         <div>
