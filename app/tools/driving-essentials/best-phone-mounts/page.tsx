@@ -154,7 +154,7 @@ function PhoneMountHero() {
             Spark shifts.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 hidden flex-wrap gap-3 md:flex">
             {[
               "7 min read",
               "Updated July 2026",
