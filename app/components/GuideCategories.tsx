@@ -56,40 +56,64 @@ const guideSections = [
 
 export default function GuideCategories() {
   return (
-    <section className="bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
-        <div className="grid gap-6 lg:grid-cols-2">
-          {guideSections.map((section) => (
-            <div
-              key={section.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7"
-            >
+    <section className="mx-auto w-full max-w-7xl px-5 pb-8 md:px-8 md:pb-12 lg:px-10">
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
+            Browse Guides
+          </p>
+
+          <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
+            Practical help for every part of Spark driving.
+          </h2>
+        </div>
+
+        <p className="max-w-xl text-base leading-7 text-slate-600">
+          Start with the section that matches what you are trying to understand,
+          then open the full guide for step-by-step help.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        {guideSections.map((section, index) => (
+          <div
+            key={section.title}
+            className="group relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)] sm:p-7"
+          >
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
+
+            <div className="flex items-start gap-4">
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
+                #{index + 1}
+              </span>
+
               <div>
-                <h2 className="text-2xl font-bold tracking-tight text-slate-950">
+                <h2 className="text-2xl font-black tracking-tight text-slate-950">
                   {section.title}
                 </h2>
+
                 <p className="mt-3 text-base leading-7 text-slate-600">
                   {section.description}
                 </p>
               </div>
-
-              <div className="mt-6 grid gap-3">
-                {section.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
-                  >
-                    <span>{link.label}</span>
-                    <span className="text-blue-700 transition group-hover:translate-x-1">
-                      →
-                    </span>
-                  </a>
-                ))}
-              </div>
             </div>
-          ))}
-        </div>
+
+            <div className="mt-6 grid gap-3">
+              {section.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="group/link flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 text-sm font-bold text-slate-800 ring-1 ring-slate-200/80 transition duration-200 hover:bg-orange-50 hover:text-orange-700 hover:ring-orange-200"
+                >
+                  <span>{link.label}</span>
+                  <span className="text-orange-600 transition duration-200 group-hover/link:translate-x-1">
+                    →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

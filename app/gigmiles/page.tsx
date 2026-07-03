@@ -114,7 +114,7 @@ function AppStoreButton({ className = "" }: { className?: string }) {
       href={googlePlayUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-full bg-blue-700 px-6 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 ${className}`}
+      className={`inline-flex items-center justify-center rounded-2xl bg-blue-700 px-6 py-3 text-center text-sm font-black text-white shadow-lg shadow-blue-950/20 transition duration-200 hover:-translate-y-0.5 hover:bg-blue-800 ${className}`}
     >
       Get GigMiles on Google Play
     </a>
@@ -129,8 +129,9 @@ function Card({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 className="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+    <section className="relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 sm:p-8">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
+      <h2 className="text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
         {title}
       </h2>
       <div className="mt-5 text-base leading-8 text-slate-700">{children}</div>
@@ -141,86 +142,90 @@ function Card({
 export default function GigMilesPage() {
   return (
     <main className="bg-slate-50">
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 sm:py-16 lg:grid-cols-[1fr_460px]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
-              GigMiles
-            </p>
+      <section className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8 md:py-14 lg:px-10 lg:py-16">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:p-12 lg:p-14">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.24),transparent_32%)]" />
 
-            <div className="mt-5 flex items-center gap-4">
-              <Image
-                src="/images/gigmiles/gigmileslogo.png"
-                alt="GigMiles app logo"
-                width={72}
-                height={72}
-                className="rounded-2xl shadow-sm"
-                priority
-              />
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
-                  Mileage tracker for gig drivers
-                </p>
-                <p className="mt-1 text-sm font-semibold text-emerald-700">
-                  Free plan available for casual drivers
-                </p>
+          <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_460px]">
+            <div>
+              <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950">
+                GigMiles
+              </span>
+
+              <div className="mt-6 flex items-center gap-4">
+                <Image
+                  src="/images/gigmiles/gigmileslogo.png"
+                  alt="GigMiles app logo"
+                  width={72}
+                  height={72}
+                  className="rounded-2xl shadow-lg shadow-slate-950/20"
+                  priority
+                />
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.16em] text-slate-400">
+                    Mileage tracker for gig drivers
+                  </p>
+                  <p className="mt-1 text-sm font-black text-emerald-300">
+                    Free plan available for casual drivers
+                  </p>
+                </div>
+              </div>
+
+              <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl">
+                Mileage tracking made simple for gig drivers.
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+                GigMiles helps drivers track mileage, expenses, earnings, work
+                hours, shifts, deductions, and tax-ready records in one simple app.
+                Use it for Spark, DoorDash, Uber, Instacart, Amazon Flex, medical
+                courier work, and other gig apps.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <AppStoreButton className="bg-white text-slate-950 hover:bg-orange-400" />
+                <a
+                  href="#screenshots"
+                  className="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-black text-white ring-1 ring-white/15 transition duration-200 hover:-translate-y-0.5 hover:bg-white/15"
+                >
+                  View screenshots
+                </a>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {["Mileage", "Earnings", "Expenses"].map((label) => (
+                  <div
+                    key={label}
+                    className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15"
+                  >
+                    <p className="text-sm font-black text-white">{label}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">
+                      {label === "Mileage"
+                        ? "Track business miles by shift."
+                        : label === "Earnings"
+                          ? "Review pay, hours, and totals."
+                          : "Save driving costs year-round."}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-950 sm:text-6xl sm:leading-tight">
-              Mileage tracking made simple for gig drivers.
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              GigMiles helps drivers track mileage, expenses, earnings, work
-              hours, shifts, deductions, and tax-ready records in one simple app.
-              Use it for Spark, DoorDash, Uber, Instacart, Amazon Flex, medical
-              courier work, and other gig apps.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <AppStoreButton />
-              <a
-                href="#screenshots"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
-              >
-                View screenshots
-              </a>
+            <div className="rounded-3xl bg-white/10 p-3 shadow-2xl ring-1 ring-white/15">
+              <Image
+                src="/images/gigmiles/gigmiles banner.png"
+                alt="GigMiles app banner showing mileage, shift, earnings, and deductions screens."
+                width={1600}
+                height={900}
+                className="h-auto w-full rounded-2xl"
+                priority
+              />
             </div>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {["Mileage", "Earnings", "Expenses"].map((label) => (
-                <div
-                  key={label}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 p-4"
-                >
-                  <p className="text-sm font-bold text-slate-950">{label}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    {label === "Mileage"
-                      ? "Track business miles by shift."
-                      : label === "Earnings"
-                        ? "Review pay, hours, and totals."
-                        : "Save driving costs year-round."}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200 bg-slate-950 p-3 shadow-sm">
-            <Image
-              src="/images/gigmiles/gigmiles banner.png"
-              alt="GigMiles app banner showing mileage, shift, earnings, and deductions screens."
-              width={1600}
-              height={900}
-              className="h-auto w-full rounded-2xl"
-              priority
-            />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
           <Card title="Free for casual gig drivers">
             <p>
@@ -235,11 +240,12 @@ export default function GigMilesPage() {
             </p>
           </Card>
 
-          <section className="rounded-3xl border border-blue-100 bg-blue-50 p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+          <section className="relative overflow-hidden rounded-[2rem] bg-blue-50 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-blue-100 sm:p-8">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Quick fit
             </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950">
+            <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
               Good for Spark. Useful for every gig.
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-700">
@@ -251,13 +257,13 @@ export default function GigMilesPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Features
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
               Track the records that matter after every shift.
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
@@ -270,9 +276,10 @@ export default function GigMilesPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
+                className="relative overflow-hidden rounded-[2rem] bg-slate-50 p-6 shadow-[0_20px_70px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/70"
               >
-                <h3 className="text-lg font-bold text-slate-950">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
+                <h3 className="text-lg font-black text-slate-950">
                   {feature.title}
                 </h3>
                 <p className="mt-3 text-base leading-7 text-slate-600">
@@ -286,13 +293,13 @@ export default function GigMilesPage() {
 
       <section
         id="screenshots"
-        className="mx-auto max-w-7xl px-6 py-12 sm:py-16"
+        className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10"
       >
         <div className="max-w-3xl">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
             App screenshots
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
             See how GigMiles keeps driving records organized.
           </h2>
           <p className="mt-4 text-lg leading-8 text-slate-600">
@@ -305,10 +312,10 @@ export default function GigMilesPage() {
           {screenshots.map((screenshot) => (
             <div
               key={screenshot.title}
-              className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]"
             >
-              <div className="border-b border-slate-200 p-6">
-                <h3 className="text-xl font-bold text-slate-950">
+              <div className="p-6">
+                <h3 className="text-xl font-black text-slate-950">
                   {screenshot.title}
                 </h3>
                 <p className="mt-2 text-base leading-7 text-slate-600">
@@ -330,13 +337,13 @@ export default function GigMilesPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 sm:py-16 lg:grid-cols-[1fr_420px] lg:items-center">
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:px-8 sm:py-16 lg:grid-cols-[1fr_420px] lg:items-center lg:px-10">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Multi-app friendly
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
               Built for Spark drivers and multi-app workers.
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
@@ -349,7 +356,7 @@ export default function GigMilesPage() {
               {supportedApps.map((app) => (
                 <span
                   key={app}
-                  className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-bold text-blue-800"
+                  className="rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-800 ring-1 ring-blue-100"
                 >
                   {app}
                 </span>
@@ -357,7 +364,7 @@ export default function GigMilesPage() {
             </div>
           </div>
 
-          <div className="flex h-96 items-center justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 p-4 shadow-sm sm:h-[32rem] lg:h-96">
+          <div className="flex h-96 items-center justify-center overflow-hidden rounded-[2rem] bg-slate-950 p-4 shadow-[0_24px_80px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 sm:h-[32rem] lg:h-96">
             <Image
               src="/images/gigmiles/multi gig histroy screen  2.png"
               alt="GigMiles multi-app history filter showing Spark, DoorDash, Uber, Amazon Flex, Instacart, and medical courier options."
@@ -369,13 +376,14 @@ export default function GigMilesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-2">
-          <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+          <section className="relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 sm:p-8">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Free
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">
               Start without paying.
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-700">
@@ -391,11 +399,12 @@ export default function GigMilesPage() {
             </ul>
           </section>
 
-          <section className="rounded-3xl border border-blue-100 bg-blue-50 p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+          <section className="relative overflow-hidden rounded-[2rem] bg-blue-50 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-blue-100 sm:p-8">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Premium
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">
               Grow when your driving grows.
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-700">
@@ -412,12 +421,12 @@ export default function GigMilesPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 sm:py-16">
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
             FAQ
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
             Frequently asked questions
           </h2>
 
@@ -425,9 +434,9 @@ export default function GigMilesPage() {
             {faqs.map((faq) => (
               <div
                 key={faq.question}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
+                className="rounded-[2rem] bg-slate-50 p-6 shadow-[0_20px_70px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/70"
               >
-                <h3 className="text-lg font-bold text-slate-950">
+                <h3 className="text-lg font-black text-slate-950">
                   {faq.question}
                 </h3>
                 <p className="mt-3 text-base leading-8 text-slate-700">
@@ -439,22 +448,25 @@ export default function GigMilesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
-        <div className="rounded-3xl bg-slate-950 p-6 text-white shadow-sm sm:p-10">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-300">
-            Download GigMiles
-          </p>
-          <div className="mt-4 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Ready to organize your driving records?
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
-                Start tracking mileage, shifts, earnings, expenses, and
-                tax-ready records with GigMiles.
-              </p>
+      <section className="mx-auto max-w-5xl px-5 py-12 md:px-8 sm:py-16">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] sm:p-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.24),transparent_32%)]" />
+          <div className="relative">
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-300">
+              Download GigMiles
+            </p>
+            <div className="mt-4 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
+                  Ready to organize your driving records?
+                </h2>
+                <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
+                  Start tracking mileage, shifts, earnings, expenses, and
+                  tax-ready records with GigMiles.
+                </p>
+              </div>
+              <AppStoreButton className="bg-blue-600 hover:bg-blue-500" />
             </div>
-            <AppStoreButton className="bg-blue-600 hover:bg-blue-500" />
           </div>
         </div>
       </section>

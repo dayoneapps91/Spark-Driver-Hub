@@ -1,46 +1,51 @@
 import Link from "next/link";
-import PageHero from "../components/PageHero";
-import ArticleCard from "../components/ArticleCard";
 
 const categories = [
   {
-    title: "🚗 Driving Essentials",
+    title: "Driving Essentials",
+    label: "Most Popular",
     description:
       "Phone mounts, power banks, chargers, cables, and everyday accessories that make deliveries easier.",
     href: "/tools/driving-essentials",
   },
   {
-    title: "📦 Delivery Gear",
+    title: "Delivery Gear",
+    label: "Coming Soon",
     description:
       "Delivery bags, coolers, foldable wagons, and equipment for handling grocery orders efficiently.",
     href: "/tools/delivery-gear",
   },
   {
-    title: "🚘 Car Organization",
+    title: "Car Organization",
+    label: "Coming Soon",
     description:
       "Keep your vehicle clean and organized with practical storage and interior accessories.",
     href: "/tools/car-organization",
   },
   {
-    title: "🛡️ Safety Equipment",
+    title: "Safety Equipment",
+    label: "Coming Soon",
     description:
       "Dash cams, reflective gear, flashlights, and safety products every driver should consider.",
     href: "/tools/safety-equipment",
   },
   {
-    title: "⚡ Emergency Gear",
+    title: "Emergency Gear",
+    label: "Coming Soon",
     description:
       "Jump starters, tire inflators, emergency kits, and roadside essentials for unexpected situations.",
     href: "/tools/emergency-gear",
   },
   {
-    title: "☀️ Sun Protection",
+    title: "Sun Protection",
+    label: "Coming Soon",
     description:
       "Sun sleeves, hats, sunglasses, sunscreen, and accessories to stay comfortable during hot delivery days.",
     href: "/tools/sun-protection",
   },
   {
-    title: "🌧️ Cold & Rain Weather",
+    title: "Cold & Rain Weather",
+    label: "Coming Soon",
     description:
       "Rain gear, winter jackets, gloves, ice scrapers, and seasonal equipment for challenging weather.",
     href: "/tools/cold-rain-weather",
@@ -49,64 +54,86 @@ const categories = [
 
 export default function DriverToolsPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
-      <PageHero
-        eyebrow="Spark Driver Hub"
-        title="Driver Tools"
-        description="Discover carefully selected gear, accessories, and equipment that can help Spark drivers stay organized, protect their vehicles, and make deliveries more efficient. Every recommendation is chosen based on practicality and real-world usefulness."
-      />
+    <main className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8 md:py-14 lg:px-10 lg:py-16">
+      <section className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:p-12 lg:p-14">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(251,146,60,0.26),transparent_32%)]" />
+        <div className="relative max-w-3xl">
+          <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950">
+            Driver Tools
+          </span>
 
-      <section className="mt-12">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-slate-900">
-            Browse by Category
-          </h2>
+          <h1 className="mt-8 text-5xl font-black tracking-tight text-white md:text-6xl">
+            Gear Worth Buying
+          </h1>
 
-          <p className="mt-3 max-w-3xl text-slate-600">
-            Explore our growing collection of buying guides designed specifically
-            for Spark drivers. Whether you're looking to improve your setup,
-            stay safer on the road, or prepare for different weather conditions,
-            you'll find practical recommendations here.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            Discover carefully selected gear, accessories, and equipment that can
+            help Spark drivers stay organized, protect their vehicles, and make
+            deliveries more efficient.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Built For</p>
+              <p className="mt-2 text-2xl font-black">Spark Drivers</p>
+            </div>
+            <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Research</p>
+              <p className="mt-2 text-2xl font-black">Real recommendations</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">Browse Categories</p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
+              Find the right gear for your setup.
+            </h2>
+          </div>
+          <p className="max-w-xl text-base leading-7 text-slate-600">
+            Explore buying guides designed specifically for Spark drivers.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {categories.map((category) => (
-            <ArticleCard
-              key={category.href}
-              title={category.title}
-              description={category.description}
-              href={category.href}
-            />
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {categories.map((category, index) => (
+            <Link key={category.href} href={category.href}
+              className="group relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400"/>
+              <div className="flex items-center justify-between">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white">#{index+1}</span>
+                <span className="rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-orange-700 ring-1 ring-orange-200/80">{category.label}</span>
+              </div>
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-slate-950">{category.title}</h3>
+              <p className="mt-4 text-base leading-8 text-slate-600">{category.description}</p>
+              <div className="mt-8 inline-flex items-center rounded-2xl bg-slate-950 px-5 py-3 text-sm font-black text-white group-hover:bg-orange-600">
+                Open category <span className="ml-2">→</span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="mt-16 rounded-2xl border border-slate-200 bg-slate-50 p-8">
-        <h2 className="text-2xl font-bold text-slate-900">
+      <section className="mt-16 rounded-[2rem] bg-white p-8 shadow-lg ring-1 ring-slate-200/70 md:p-10">
+        <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
           Our Recommendation Philosophy
-        </h2>
-
-        <p className="mt-4 text-slate-700 leading-7">
-          We recommend products that solve real problems for Spark drivers.
-          Every guide focuses on value, durability, and practicality instead of
-          simply listing the most expensive options. Our goal is to help drivers
-          make informed purchasing decisions with clear explanations and honest
-          recommendations.
         </p>
-
+        <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
+          Practical recommendations for real delivery work.
+        </h2>
+        <p className="mt-4 text-base leading-8 text-slate-600">
+          We recommend products that solve real problems for Spark drivers. Every guide focuses on value, durability, and practicality instead of simply listing expensive products.
+        </p>
         <p className="mt-6 text-sm text-slate-500">
-          <strong>Affiliate Disclosure:</strong> Spark Driver Hub participates
-          in the Amazon Associates Program and may earn a commission from
-          qualifying purchases at no additional cost to you.
+          <strong>Affiliate Disclosure:</strong> Spark Driver Hub participates in the Amazon Associates Program and may earn a commission from qualifying purchases at no additional cost to you.
         </p>
       </section>
 
       <div className="mt-12">
-        <Link
-          href="/guides"
-          className="text-blue-600 font-semibold hover:underline"
-        >
+        <Link href="/guides" className="font-bold text-orange-600 hover:underline">
           ← Explore Spark Driver Guides
         </Link>
       </div>
