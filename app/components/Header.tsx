@@ -77,12 +77,11 @@ export default function Header() {
             </summary>
 
             <div className="absolute right-0 mt-4 w-[19rem] overflow-hidden rounded-[2rem] border border-white/80 bg-white/95 p-3 shadow-[0_32px_100px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 backdrop-blur-xl">
-              <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white">
-                <p className="text-sm font-black tracking-tight">
+              
+              {/* Compact Header */}
+              <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-slate-800 px-5 py-4 text-white">
+                <p className="text-base font-black tracking-tight">
                   Spark Driver Hub
-                </p>
-                <p className="mt-1 text-xs font-semibold leading-5 text-slate-300">
-                  Guides, tools, updates, and mileage resources for Spark drivers.
                 </p>
               </div>
 
@@ -94,7 +93,7 @@ export default function Header() {
                     <a
                       key={link.href}
                       href={link.href}
-                      className={`flex items-center gap-3 rounded-2xl px-4 py-3.5 text-sm font-black transition duration-200 ${
+                      className={`flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-black transition duration-200 ${
                         active
                           ? "bg-orange-50 text-orange-700 ring-1 ring-orange-200/80"
                           : "text-slate-800 hover:bg-slate-50 hover:text-blue-700"
@@ -109,6 +108,7 @@ export default function Header() {
                       >
                         {navIcons[link.name] ?? "→"}
                       </span>
+
                       {link.name}
                     </a>
                   );
@@ -117,7 +117,7 @@ export default function Header() {
                 <a
                   href="/gigmiles"
                   onClick={() => trackGigMilesClick("header_mobile_menu")}
-                  className="mt-3 flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-700 to-blue-600 px-5 py-4 text-sm font-black text-white shadow-lg shadow-blue-700/20 transition duration-200 hover:-translate-y-0.5 hover:from-orange-600 hover:to-orange-500"
+                  className="mt-3 flex items-center justify-center rounded-2xl bg-gradient-to-r from-orange-600 to-orange-500 px-5 py-4 text-sm font-black text-white shadow-lg shadow-orange-600/20 transition duration-200 hover:-translate-y-0.5 hover:from-orange-500 hover:to-orange-400"
                 >
                   Download GigMiles →
                 </a>
