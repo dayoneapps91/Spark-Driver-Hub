@@ -52,63 +52,102 @@ const julyUpdates: UpdateCard[] = [
 
 const juneUpdates: UpdateCard[] = [
   {
-    category:"SHOPPING",
-    title:"Shopping offers may include up to 3 orders",
-    summary:"Some shopping offers may include up to three customer orders.",
-    takeaway:"Evaluate item count, miles and payout before accepting."
+    category: "SHOPPING",
+    title: "Shopping offers may include up to 3 orders",
+    summary: "Some shopping offers may include up to three customer orders.",
+    takeaway: "Evaluate item count, miles and payout before accepting.",
   },
   {
-    category:"DEMAND",
-    title:"Father's Day demand expected",
-    summary:"Higher demand was expected around Father's Day.",
-    takeaway:"More demand doesn't always mean higher profits."
+    category: "DEMAND",
+    title: "Father's Day demand expected",
+    summary: "Higher demand was expected around Father's Day.",
+    takeaway: "More demand doesn't always mean higher profits.",
   },
   {
-    category:"EARNINGS",
-    title:"Confirmed customer tips reminder",
-    summary:"Tips can change before becoming final.",
-    takeaway:"Treat estimated tips as estimates until confirmed."
-  }
+    category: "EARNINGS",
+    title: "Confirmed customer tips reminder",
+    summary: "Tips can change before becoming final.",
+    takeaway: "Treat estimated tips as estimates until confirmed.",
+  },
 ];
 
-function Card({u}:{u:UpdateCard}){
- return (
-  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-    <p className="text-xs font-bold uppercase tracking-wider text-blue-700">{u.category}</p>
-    <h3 className="mt-2 text-2xl font-bold">{u.title}</h3>
-    <p className="mt-4 text-slate-700">{u.summary}</p>
-    <div className="mt-6 rounded-2xl border bg-slate-50 p-4">
-      <p className="font-bold">Driver takeaway</p>
-      <p className="mt-2 text-slate-700">{u.takeaway}</p>
-    </div>
-  </div>
- )
+function Card({ update }: { update: UpdateCard }) {
+  return (
+    <article className="group relative overflow-hidden rounded-[2.25rem] bg-white p-7 shadow-[0_24px_90px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_110px_rgba(15,23,42,0.13)]">
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
+      <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-blue-100 opacity-0 blur-2xl transition group-hover:opacity-100" />
+
+      <div className="relative">
+        <p className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-blue-700 ring-1 ring-blue-100">
+          {update.category}
+        </p>
+        <h3 className="mt-5 text-2xl font-black tracking-[-0.03em] text-slate-950">
+          {update.title}
+        </h3>
+        <p className="mt-4 text-base leading-8 text-slate-600">{update.summary}</p>
+
+        <div className="mt-6 rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-200/80">
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-orange-600">
+            Driver takeaway
+          </p>
+          <p className="mt-3 text-base leading-7 text-slate-700">{update.takeaway}</p>
+        </div>
+      </div>
+    </article>
+  );
 }
 
-export default function PlatformUpdatesPage(){
- return (
-  <main>
-   <PageHero
-    eyebrow="Platform Updates"
-    title="Spark Platform Updates"
-    description="Short, practical updates about Spark app changes, platform reminders, order features, driver safety notes, and official announcements."
-   />
-   <section className="mx-auto max-w-7xl px-6 py-10">
-    <div className="rounded-3xl border border-blue-100 bg-blue-50 p-6">
-      <h2 className="text-2xl font-bold">What this page is for</h2>
-      <p className="mt-3 text-slate-700">This page tracks Spark-related platform updates in a shorter format than full newsletter summaries.</p>
-    </div>
+function MonthSection({ month, updates }: { month: string; updates: UpdateCard[] }) {
+  return (
+    <section className="mt-14">
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
+            Platform Notes
+          </p>
+          <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] text-slate-950">
+            {month}
+          </h2>
+        </div>
+      </div>
 
-    <h2 className="mt-10 text-3xl font-bold">July 2026</h2>
-    <div className="mt-6 grid gap-6 lg:grid-cols-2">
-      {julyUpdates.map(u=><Card key={u.title} u={u}/>)}
-    </div>
+      <div className="mt-7 grid gap-6 lg:grid-cols-2">
+        {updates.map((update) => (
+          <Card key={update.title} update={update} />
+        ))}
+      </div>
+    </section>
+  );
+}
 
-    <h2 className="mt-12 text-3xl font-bold">June 2026</h2>
-    <div className="mt-6 grid gap-6 lg:grid-cols-2">
-      {juneUpdates.map(u=><Card key={u.title} u={u}/>)}
-    </div>
-   </section>
-  </main>
- )
+export default function PlatformUpdatesPage() {
+  return (
+    <main className="bg-slate-50">
+      <PageHero
+        eyebrow="Platform Updates"
+        title="Spark Platform Updates"
+        description="Short, practical updates about Spark app changes, platform reminders, order features, driver safety notes, and official announcements."
+      />
+
+      <section className="mx-auto max-w-7xl px-6 py-14">
+        <div className="relative overflow-hidden rounded-[2.25rem] bg-white p-7 shadow-[0_24px_90px_rgba(15,23,42,0.08)] ring-1 ring-blue-100 md:p-9">
+          <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-blue-100 blur-2xl" />
+          <div className="relative">
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
+              What this page is for
+            </p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-slate-950">
+              Fast notes for driver planning.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+              This page tracks Spark-related platform updates in a shorter format than full newsletter summaries.
+            </p>
+          </div>
+        </div>
+
+        <MonthSection month="July 2026" updates={julyUpdates} />
+        <MonthSection month="June 2026" updates={juneUpdates} />
+      </section>
+    </main>
+  );
 }

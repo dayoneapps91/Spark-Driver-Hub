@@ -59,8 +59,9 @@ function NewsletterCard({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 className="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+    <section className="relative overflow-hidden rounded-[2.25rem] bg-white p-7 shadow-[0_24px_90px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 sm:p-9">
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
+      <h2 className="text-2xl font-black tracking-[-0.03em] text-slate-950 sm:text-3xl">
         {title}
       </h2>
       <div className="mt-6 space-y-5 text-base leading-8 text-slate-700">
@@ -73,8 +74,10 @@ function NewsletterCard({
 export default function July2026NewsletterPage() {
   return (
     <main className="bg-slate-50">
-      <section className="border-b border-slate-200 bg-gradient-to-br from-white via-blue-50/50 to-slate-50">
-        <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-blue-50/70 to-slate-50">
+        <div className="absolute -right-24 top-12 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl" />
+        <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-orange-200/30 blur-3xl" />
+        <div className="relative mx-auto max-w-4xl px-6 py-12 sm:py-16">
           <a
             href="/updates"
             className="inline-flex text-sm font-bold uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800"
@@ -119,7 +122,7 @@ export default function July2026NewsletterPage() {
             </span>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white p-2 shadow-lg">
+          <div className="mt-8 overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_24px_90px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70">
             <img
               src="/newsletters/july-2026-hero.png"
               alt="July 2026 Spark Driver newsletter illustration featuring Independence Day, Spark deliveries, Express shopping orders, and soccer."
@@ -139,7 +142,7 @@ export default function July2026NewsletterPage() {
 
       <section className="mx-auto max-w-4xl px-6 py-12">
         <div className="space-y-6">
-          <section className="rounded-3xl border border-blue-100 bg-blue-50 p-6 shadow-sm sm:p-8">
+          <section className="relative overflow-hidden rounded-[2.25rem] bg-blue-50 p-7 shadow-[0_24px_90px_rgba(15,23,42,0.08)] ring-1 ring-blue-100 sm:p-9">
             <h2 className="text-2xl font-bold text-slate-950">
               Quick Summary
             </h2>
@@ -163,7 +166,7 @@ export default function July2026NewsletterPage() {
             </div>
           </section>
 
-          <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <section className="relative overflow-hidden rounded-[2.25rem] bg-white p-7 shadow-[0_24px_90px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 sm:p-9">
             <p className="font-bold text-slate-950">Editor&apos;s note</p>
             <p className="mt-3 text-base leading-8 text-slate-700">
               This page summarizes the official July 2026 Spark Driver Digest in
@@ -382,7 +385,7 @@ export default function July2026NewsletterPage() {
               in one place.
             </p>
             <a
-              href="/"
+              href="/gigmiles"
               className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-bold text-blue-700 hover:bg-blue-50"
             >
               Learn more about GigMiles →
