@@ -11,11 +11,11 @@ const guides = [
   },
   {
     title: "Best Car Chargers",
-    eyebrow: "Coming Soon",
+    eyebrow: "New Guide",
     description:
       "Fast car chargers and adapters that keep your phone powered while running Spark, GPS, music, and messages.",
-    href: "/tools/driving-essentials/best-car-chargers",
-    status: "Soon",
+    href: "/tools/driving-essentials/phone-chargers",
+    status: "Live",
   },
   {
     title: "Best Power Banks",
@@ -76,9 +76,7 @@ export default function DrivingEssentialsPage() {
                 Built For
               </p>
 
-              <p className="mt-2 text-2xl font-black">
-                Spark Drivers
-              </p>
+              <p className="mt-2 text-2xl font-black">Spark Drivers</p>
             </div>
 
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
@@ -86,9 +84,7 @@ export default function DrivingEssentialsPage() {
                 Updated
               </p>
 
-              <p className="mt-2 text-2xl font-black">
-                July 2026
-              </p>
+              <p className="mt-2 text-2xl font-black">July 2026</p>
             </div>
           </div>
         </div>
