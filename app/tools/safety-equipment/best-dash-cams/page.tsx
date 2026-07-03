@@ -17,11 +17,11 @@ const products = [
     rank: 1,
     badge: "Best Overall",
     title: "VIOFO A229 Plus Front & Rear Dash Cam",
-    imageSrc: "/images/tools/dash-cams/viofo-a229-plus.jpg",
+    imageSrc: "/images/tools/dash-cams/viofoa229.jpg",
     imageAlt: "VIOFO A229 Plus front and rear dash cam",
     score: "9.6/10",
     bestFor: "Most Spark drivers",
-    amazonUrl: `https://www.amazon.com/s?k=VIOFO+A229+Plus+Dash+Cam&tag=${affiliateTag}`,
+    amazonUrl: `https://www.amazon.com/dp/B0CKX14L34?tag=${affiliateTag}`,
     summary:
       "The strongest overall pick for delivery drivers who want dependable front and rear coverage without jumping into the most expensive premium dash cams. It gives Spark drivers a better chance of capturing what happens in front of the vehicle, behind the vehicle, and around busy pickup or drop-off areas.",
     pros: [
@@ -41,11 +41,11 @@ const products = [
     rank: 2,
     badge: "Best Budget Front Cam",
     title: "VIOFO A119 Mini 2 Dash Cam",
-    imageSrc: "/images/tools/dash-cams/viofo-a119-mini-2.jpg",
+    imageSrc: "/images/tools/dash-cams/viofoa119.jpg",
     imageAlt: "VIOFO A119 Mini 2 compact dash cam",
     score: "9.3/10",
     bestFor: "Front-only protection",
-    amazonUrl: `https://www.amazon.com/s?k=VIOFO+A119+Mini+2+Dash+Cam&tag=${affiliateTag}`,
+    amazonUrl: `https://www.amazon.com/dp/B0C5MVB7NX?tag=${affiliateTag}`,
     summary:
       "A smart front-only option for drivers who want strong video quality without paying for a full front-and-rear kit. It is compact, practical, and easier to install than multi-camera systems.",
     pros: [
@@ -65,11 +65,11 @@ const products = [
     rank: 3,
     badge: "Best Compact",
     title: "Garmin Dash Cam Mini 3",
-    imageSrc: "/images/tools/dash-cams/garmin-mini-3.jpg",
+    imageSrc: "/images/tools/dash-cams/garmin mini 3.jpg",
     imageAlt: "Garmin Dash Cam Mini 3 compact windshield dash cam",
     score: "9.0/10",
     bestFor: "Small clean setups",
-    amazonUrl: `https://www.amazon.com/s?k=Garmin+Dash+Cam+Mini+3&tag=${affiliateTag}`,
+    amazonUrl: `https://www.amazon.com/dp/B0DDM7PFLW?tag=${affiliateTag}`,
     summary:
       "A small, clean dash cam for drivers who want something discreet behind the mirror. It is not the highest-resolution pick, but it is easy to live with and keeps the windshield area uncluttered.",
     pros: [
@@ -89,11 +89,11 @@ const products = [
     rank: 4,
     badge: "Best Budget 4K Dual",
     title: "ROVE R2-4K Dual Dash Cam",
-    imageSrc: "/images/tools/dash-cams/rove-r2-4k-dual.jpg",
+    imageSrc: "/images/tools/dash-cams/rover24k.jpg",
     imageAlt: "ROVE R2-4K Dual front and rear dash cam",
     score: "8.9/10",
     bestFor: "Budget front and rear 4K",
-    amazonUrl: `https://www.amazon.com/s?k=ROVE+R2-4K+Dual+Dash+Cam&tag=${affiliateTag}`,
+    amazonUrl: `https://www.amazon.com/dp/B0D6J5B98H?tag=${affiliateTag}`,
     summary:
       "A strong value option for drivers who want front and rear coverage with a 4K-style front camera at a more accessible price. It is a practical middle ground for drivers who want more than a basic camera but do not want a high-end setup.",
     pros: [
@@ -112,12 +112,12 @@ const products = [
   {
     rank: 5,
     badge: "Best 3-Channel",
-    title: "Vantrue N4 Pro 3-Channel Dash Cam",
-    imageSrc: "/images/tools/dash-cams/vantrue-n4-pro.jpg",
-    imageAlt: "Vantrue N4 Pro 3-channel dash cam with front cabin and rear cameras",
+    title: "Vantrue N4 Pro S 3-Channel Dash Cam",
+    imageSrc: "/images/tools/dash-cams/vantrue.jpg",
+    imageAlt: "Vantrue N4 Pro S 3-channel dash cam with front cabin and rear cameras",
     score: "8.8/10",
     bestFor: "Front, cabin, and rear coverage",
-    amazonUrl: `https://www.amazon.com/s?k=Vantrue+N4+Pro+3+Channel+Dash+Cam&tag=${affiliateTag}`,
+    amazonUrl: `https://www.amazon.com/dp/B0FXX2693Y?tag=${affiliateTag}`,
     summary:
       "The best fit for drivers who want extra coverage inside the vehicle along with front and rear recording. It is more than many Spark drivers need, but it can make sense if you also rideshare, work late, park in busy areas, or want cabin footage.",
     pros: [
