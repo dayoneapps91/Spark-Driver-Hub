@@ -71,7 +71,7 @@ export default function UpdatesPage() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div className="hidden gap-4 md:grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <div className="rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/15 backdrop-blur">
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
                   Best For
