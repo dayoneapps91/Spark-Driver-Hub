@@ -6,6 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sparkdriverhub.com"),
+
+  other: {
+  "google-adsense-account": "ca-pub-4736976027179082",
+},
+
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
