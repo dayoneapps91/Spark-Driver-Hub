@@ -57,6 +57,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4736976027179082"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+      </head>
+
       <body>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0CN2RDZCXD"
@@ -70,12 +79,6 @@ export default function RootLayout({
             gtag('config', 'G-0CN2RDZCXD');
           `}
         </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4736976027179082"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
 
         <Header />
         {children}
