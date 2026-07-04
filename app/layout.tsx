@@ -7,9 +7,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://sparkdriverhub.com"),
   icons: {
-  icon: "/icon.png",
-  apple: "/apple-icon.png",
-},
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   title: {
     default: "Spark Driver Hub | Mileage, Taxes, Updates & Tools",
     template: "%s | Spark Driver Hub",
@@ -70,6 +70,12 @@ export default function RootLayout({
             gtag('config', 'G-0CN2RDZCXD');
           `}
         </Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4736976027179082"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
 
         <Header />
         {children}
