@@ -3,43 +3,33 @@ import Link from "next/link";
 const guides = [
   {
     title: "Best Car Trunk Organizers",
-    eyebrow: "Live Guide",
     description:
       "Trunk organizers that keep grocery bags, delivery supplies, and everyday gear from sliding around during Spark shifts.",
     href: "/tools/car-organization/best-car-trunk-organizers",
-    status: "Live",
   },
   {
     title: "Best Seat Organizers",
-    eyebrow: "Coming Soon",
     description:
       "Backseat and front-seat organizers for drivers who keep supplies, cables, water, and personal items inside the cabin.",
     href: "/tools/car-organization/best-seat-organizers",
-    status: "Soon",
   },
   {
     title: "Best Storage Bins for Delivery Drivers",
-    eyebrow: "Coming Soon",
     description:
       "Simple bins and collapsible crates for separating grocery orders, cleaning supplies, and emergency items.",
     href: "/tools/car-organization/best-storage-bins",
-    status: "Soon",
   },
   {
     title: "Best Car Trash Cans",
-    eyebrow: "Coming Soon",
     description:
       "Small trash solutions that help keep receipts, wrappers, wipes, and everyday driving mess under control.",
     href: "/tools/car-organization/best-car-trash-cans",
-    status: "Soon",
   },
   {
     title: "Best Cable Organizers",
-    eyebrow: "Coming Soon",
     description:
       "Cable clips, pouches, and small accessories that keep chargers and cords from turning into clutter.",
     href: "/tools/car-organization/best-cable-organizers",
-    status: "Soon",
   },
 ];
 
@@ -115,21 +105,13 @@ export default function CarOrganizationPage() {
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
 
-              <div className="flex items-center justify-between gap-4">
+              <div>
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
                   #{index + 1}
                 </span>
-
-                <span className="rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-orange-700 ring-1 ring-orange-200/80">
-                  {guide.status}
-                </span>
               </div>
 
-              <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-slate-400">
-                {guide.eyebrow}
-              </p>
-
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-slate-950">
                 {guide.title}
               </h3>
 
