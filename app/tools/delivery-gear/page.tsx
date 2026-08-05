@@ -4,31 +4,31 @@ const guides = [
   {
     title: "Best Insulated Delivery Bags",
     eyebrow: "Starter Pick",
-    description: "Insulated bags and grocery totes that help protect hot, cold, and frozen items during Spark deliveries.",
+    description:
+      "Insulated bags and grocery totes that help protect hot, cold, and frozen items during Spark deliveries.",
     href: "/tools/delivery-gear/best-insulated-delivery-bags",
-    status: "Coming Soon",
   },
   {
     title: "Best Grocery Delivery Coolers",
     eyebrow: "Cold Items",
-    description: "Coolers and cold storage options for drivers handling frozen groceries, summer orders, and longer delivery routes.",
+    description:
+      "Coolers and cold storage options for drivers handling frozen groceries, summer orders, and longer delivery routes.",
     href: "/tools/delivery-gear/best-grocery-delivery-coolers",
-    status: "Coming Soon",
   },
   {
     title: "Best Foldable Wagons",
     eyebrow: "Heavy Orders",
-    description: "Foldable wagons for apartments, bulk grocery orders, and long walks from parking lots to customer doors.",
+    description:
+      "Foldable wagons for apartments, bulk grocery orders, and long walks from parking lots to customer doors.",
     href: "/tools/delivery-gear/best-foldable-wagons",
-    status: "Coming Soon",
   },
   {
     title: "Best Drink Carriers",
     eyebrow: "Small Gear",
-    description: "Drink holders and small carriers that reduce spills and help organize multi-item delivery orders.",
+    description:
+      "Drink holders and small carriers that reduce spills and help organize multi-item delivery orders.",
     href: "/tools/delivery-gear/best-drink-carriers",
-    status: "Coming Soon",
-  }
+  },
 ];
 
 export default function DeliveryGearPage() {
@@ -38,7 +38,6 @@ export default function DeliveryGearPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(251,146,60,0.26),transparent_32%)]" />
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
         <div className="absolute -bottom-24 left-10 h-72 w-72 rounded-full bg-orange-400/20 blur-3xl" />
-
         <div className="relative max-w-3xl">
           <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-300">
             <Link href="/tools" className="transition hover:text-white">Tools</Link>
@@ -65,7 +64,7 @@ export default function DeliveryGearPage() {
             </div>
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Focus</p>
-              <p className="mt-2 text-2xl font-black">Food protection</p>
+              <p className="mt-2 text-2xl font-black">Food Protection</p>
             </div>
           </div>
         </div>
@@ -77,6 +76,7 @@ export default function DeliveryGearPage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">Buying Guides</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">Pick the guide you need.</h2>
           </div>
+
           <p className="max-w-xl text-base leading-7 text-slate-600">
             Practical buying guides built around real delivery-driver use, everyday value, and products that solve actual Spark driver problems.
           </p>
@@ -90,17 +90,15 @@ export default function DeliveryGearPage() {
               className="group relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
-              <div className="flex items-center justify-between gap-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
-                  #{index + 1}
-                </span>
-                <span className="rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-orange-700 ring-1 ring-orange-200/80">
-                  {guide.status}
-                </span>
-              </div>
+
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
+                #{index + 1}
+              </span>
+
               <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-slate-400">{guide.eyebrow}</p>
               <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950">{guide.title}</h3>
               <p className="mt-4 text-base leading-8 text-slate-600">{guide.description}</p>
+
               <div className="mt-8 inline-flex items-center rounded-2xl bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-lg shadow-slate-950/20 transition duration-200 group-hover:bg-orange-600">
                 Open guide <span className="ml-2 transition duration-200 group-hover:translate-x-1">→</span>
               </div>
