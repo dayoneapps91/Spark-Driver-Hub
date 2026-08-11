@@ -3,32 +3,22 @@ import Link from "next/link";
 const guides = [
   {
     title: "Best Portable Jump Starters",
-    eyebrow: "Battery Help",
-    description: "Compact jump starters that can help drivers recover from a dead battery without waiting for roadside assistance.",
+    description:
+      "Compact jump starters that can help drivers recover from a dead battery without waiting for roadside assistance.",
     href: "/tools/emergency-gear/best-portable-jump-starters",
-    status: "Coming Soon",
   },
   {
-    title: "Best Tire Inflators",
-    eyebrow: "Tires",
-    description: "Portable inflators for low tire pressure, long shifts, and delivery drivers who put extra miles on their vehicles.",
+    title: "Best Portable Tire Inflators",
+    description:
+      "Portable tire inflators for low tire pressure, roadside problems, and delivery drivers who put extra miles on their vehicles.",
     href: "/tools/emergency-gear/best-tire-inflators",
-    status: "Coming Soon",
   },
   {
     title: "Best Roadside Emergency Kits",
-    eyebrow: "Starter Kit",
-    description: "Basic emergency kits with cables, tools, visibility gear, and roadside essentials for delivery drivers.",
+    description:
+      "Emergency kits, warning lights, flashlights, visibility gear, cables, and practical roadside tools for unexpected vehicle problems and nighttime stops.",
     href: "/tools/emergency-gear/best-roadside-emergency-kits",
-    status: "Coming Soon",
   },
-  {
-    title: "Best Portable Air Compressors",
-    eyebrow: "Vehicle Care",
-    description: "Air compressors and compact tools for drivers who want more control over tire issues during long delivery weeks.",
-    href: "/tools/emergency-gear/best-portable-air-compressors",
-    status: "Coming Soon",
-  }
 ];
 
 export default function EmergencyGearPage() {
@@ -41,7 +31,9 @@ export default function EmergencyGearPage() {
 
         <div className="relative max-w-3xl">
           <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-300">
-            <Link href="/tools" className="transition hover:text-white">Tools</Link>
+            <Link href="/tools" className="transition hover:text-white">
+              Tools
+            </Link>
             <span className="text-slate-500">/</span>
             <span className="text-slate-200">Emergency Gear</span>
           </nav>
@@ -55,16 +47,22 @@ export default function EmergencyGearPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Roadside tools, jump starters, tire inflators, and emergency kits that help drivers prepare for problems before they happen.
+            Jump starters, tire inflators, air compressors, warning lights,
+            flashlights, and roadside emergency kits that help drivers prepare
+            for vehicle problems before they happen.
           </p>
 
           <div className="mt-8 hidden gap-4 md:grid md:grid-cols-2">
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Built For</p>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
+                Built For
+              </p>
               <p className="mt-2 text-2xl font-black">Spark Drivers</p>
             </div>
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Focus</p>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
+                Focus
+              </p>
               <p className="mt-2 text-2xl font-black">Roadside ready</p>
             </div>
           </div>
@@ -74,11 +72,16 @@ export default function EmergencyGearPage() {
       <section className="mt-14">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">Buying Guides</p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">Pick the guide you need.</h2>
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
+              Buying Guides
+            </p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
+              Pick the guide you need.
+            </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-slate-600">
-            Practical buying guides built around real delivery-driver use, everyday value, and products that solve actual Spark driver problems.
+            Practical buying guides built around real delivery-driver use,
+            everyday value, and products that solve actual Spark driver problems.
           </p>
         </div>
 
@@ -90,19 +93,26 @@ export default function EmergencyGearPage() {
               className="group relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
-              <div className="flex items-center justify-between gap-4">
+
+              <div>
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
                   #{index + 1}
                 </span>
-                <span className="rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-orange-700 ring-1 ring-orange-200/80">
-                  {guide.status}
-                </span>
               </div>
-              <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-slate-400">{guide.eyebrow}</p>
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950">{guide.title}</h3>
-              <p className="mt-4 text-base leading-8 text-slate-600">{guide.description}</p>
+
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-slate-950">
+                {guide.title}
+              </h3>
+
+              <p className="mt-4 text-base leading-8 text-slate-600">
+                {guide.description}
+              </p>
+
               <div className="mt-8 inline-flex items-center rounded-2xl bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-lg shadow-slate-950/20 transition duration-200 group-hover:bg-orange-600">
-                Open guide <span className="ml-2 transition duration-200 group-hover:translate-x-1">→</span>
+                Open guide
+                <span className="ml-2 transition duration-200 group-hover:translate-x-1">
+                  →
+                </span>
               </div>
             </Link>
           ))}
@@ -110,18 +120,28 @@ export default function EmergencyGearPage() {
       </section>
 
       <section className="mt-16 rounded-[2rem] bg-white p-8 shadow-lg ring-1 ring-slate-200/70 md:p-10">
-        <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">Our Recommendation Philosophy</p>
-        <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">Practical recommendations for real delivery work.</h2>
+        <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
+          Our Recommendation Philosophy
+        </p>
+        <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
+          Practical recommendations for real delivery work.
+        </h2>
         <p className="mt-4 text-base leading-8 text-slate-600">
-          We recommend products that solve real problems for Spark drivers. Every guide focuses on value, durability, usefulness, and daily driver practicality instead of simply listing expensive products.
+          We recommend products that solve real problems for Spark drivers.
+          Every guide focuses on value, durability, usefulness, and daily driver
+          practicality instead of simply listing expensive products.
         </p>
         <p className="mt-6 text-sm text-slate-500">
-          <strong>Affiliate Disclosure:</strong> Spark Driver Hub participates in the Amazon Associates Program and may earn a commission from qualifying purchases at no additional cost to you.
+          <strong>Affiliate Disclosure:</strong> Spark Driver Hub participates in
+          the Amazon Associates Program and may earn a commission from qualifying
+          purchases at no additional cost to you.
         </p>
       </section>
 
       <div className="mt-12">
-        <Link href="/tools" className="font-bold text-orange-600 hover:underline">← Back to Driver Tools</Link>
+        <Link href="/tools" className="font-bold text-orange-600 hover:underline">
+          ← Back to Driver Tools
+        </Link>
       </div>
     </main>
   );

@@ -22,7 +22,7 @@ const categories = [
   {
     title: "Safety Equipment",
     description:
-      "Dash cams, flashlights, reflective gear, and safety essentials for everyday delivery driving.",
+      "Dash cams, reflective gear, and safety essentials for everyday delivery driving.",
     href: "/tools/safety-equipment",
   },
   {
@@ -32,16 +32,10 @@ const categories = [
     href: "/tools/emergency-gear",
   },
   {
-    title: "Sun Protection",
+    title: "Weather Protection",
     description:
-      "Sunshades, cooling sleeves, sunglasses, sunscreen, hats, and gear for hot delivery days.",
-    href: "/tools/sun-protection",
-  },
-  {
-    title: "Cold & Rain Weather",
-    description:
-      "Rain gear, winter jackets, gloves, ice scrapers, and seasonal equipment for challenging weather.",
-    href: "/tools/cold-rain-weather",
+      "Sun protection, rain gear, winter equipment, and seasonal tools for drivers working through changing weather.",
+    href: "/tools/weather-protection",
   },
 ];
 

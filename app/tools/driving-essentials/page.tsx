@@ -3,43 +3,33 @@ import Link from "next/link";
 const guides = [
   {
     title: "Best Phone Mounts",
-    eyebrow: "Most Popular",
     description:
       "Secure dashboard, windshield, vent, and MagSafe mounts built for delivery shifts, navigation, and constant stops.",
     href: "/tools/driving-essentials/best-phone-mounts",
-    status: "Live",
   },
   {
     title: "Best Car Chargers",
-    eyebrow: "New Guide",
     description:
       "Fast car chargers and adapters that keep your phone powered while running Spark, GPS, music, and messages.",
     href: "/tools/driving-essentials/phone-chargers",
-    status: "Live",
   },
   {
     title: "Best Power Banks",
-    eyebrow: "Coming Soon",
     description:
       "Portable battery packs for long delivery days, emergencies, and drivers who do not want battery anxiety.",
     href: "/tools/driving-essentials/best-power-banks",
-    status: "Soon",
   },
   {
     title: "Best USB-C Cables",
-    eyebrow: "Coming Soon",
     description:
       "Durable charging cables that can handle repeated plugging, unplugging, and everyday vehicle use.",
     href: "/tools/driving-essentials/best-usb-c-cables",
-    status: "Soon",
   },
   {
     title: "Charging Accessories",
-    eyebrow: "Coming Soon",
     description:
       "Cable organizers, extra adapters, and small accessories that make your driving setup cleaner and easier.",
     href: "/tools/driving-essentials/charging-accessories",
-    status: "Soon",
   },
 ];
 
@@ -117,21 +107,13 @@ export default function DrivingEssentialsPage() {
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
 
-              <div className="flex items-center justify-between gap-4">
+              <div>
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
                   #{index + 1}
                 </span>
-
-                <span className="rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-orange-700 ring-1 ring-orange-200/80">
-                  {guide.status}
-                </span>
               </div>
 
-              <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-slate-400">
-                {guide.eyebrow}
-              </p>
-
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-slate-950">
                 {guide.title}
               </h3>
 

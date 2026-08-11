@@ -2,70 +2,56 @@ import Link from "next/link";
 
 const guides = [
   {
-    title: "Best Sun Protection Gear",
-    eyebrow: "Live Guide",
+    title: "Best Hot Weather & Sun Protection Gear",
     description:
-      "Windshield sun shades, cooling sleeves, sunglasses, sunscreen, and hats that help drivers stay more comfortable during hot delivery days.",
-    href: "/tools/sun-protection/best-sun-protection-gear",
-    status: "Live",
+      "Cooling sleeves, hats, sunglasses, and practical sun-protection gear for long daytime routes, hot parking lots, and outdoor deliveries.",
+    href: "/tools/weather-protection/best-hot-weather-sun-protection-gear",
   },
   {
     title: "Best Windshield Sun Shades",
-    eyebrow: "Coming Soon",
     description:
-      "Universal, custom-fit, and umbrella-style sun shades for drivers who want to reduce heat while parked between offers.",
-    href: "/tools/sun-protection/best-windshield-sun-shades",
-    status: "Soon",
+      "Universal, custom-fit, and umbrella-style sun shades that help reduce heat buildup while your vehicle is parked between offers.",
+    href: "/tools/weather-protection/best-windshield-sun-shades",
   },
   {
-    title: "Best Cooling Arm Sleeves",
-    eyebrow: "Coming Soon",
+    title: "Best Rain & Waterproof Delivery Gear",
     description:
-      "UPF arm sleeves for long daytime routes, side-window sun exposure, and drivers who want less direct sun on their arms.",
-    href: "/tools/sun-protection/best-cooling-arm-sleeves",
-    status: "Soon",
+      "Rain jackets, ponchos, waterproof footwear, and wet-weather gear for carrying groceries through rainy parking lots and walkways.",
+    href: "/tools/weather-protection/best-rain-waterproof-delivery-gear",
   },
   {
-    title: "Best Driving Sunglasses",
-    eyebrow: "Coming Soon",
+    title: "Best Cold Weather & Winter Gear",
     description:
-      "Polarized sunglasses for bright roads, parking-lot glare, and long daytime delivery shifts.",
-    href: "/tools/sun-protection/best-driving-sunglasses",
-    status: "Soon",
-  },
-  {
-    title: "Best Cooling Hats",
-    eyebrow: "Coming Soon",
-    description:
-      "Wide-brim hats, cooling hats, and practical headwear for outdoor loading, apartment walks, and hot drop-offs.",
-    href: "/tools/sun-protection/best-cooling-hats",
-    status: "Soon",
+      "Winter gloves, ice scrapers, snow brushes, and practical cold-weather tools for drivers working through freezing mornings and winter conditions.",
+    href: "/tools/weather-protection/best-cold-weather-winter-gear",
   },
 ];
 
-export default function SunProtectionPage() {
+export default function WeatherProtectionPage() {
   return (
     <main className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8 md:py-14 lg:px-10 lg:py-16">
       <section className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:p-12 lg:p-14">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,146,60,0.35),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.22),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,146,60,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.26),transparent_32%)]" />
 
         <div className="relative max-w-3xl">
           <div className="flex flex-wrap gap-3">
             <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950">
               Driver Tools
             </span>
+
             <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-200 ring-1 ring-white/15">
-              Sun Protection
+              Weather Protection
             </span>
           </div>
 
           <h1 className="mt-8 text-5xl font-black tracking-tight text-white md:text-6xl">
-            Sun Protection Gear
+            Weather Protection for Spark Drivers
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Practical products that help Spark drivers manage heat, glare, sun
-            exposure, and hot vehicle interiors during long delivery days.
+            Practical gear for hot sun, rain, wet conditions, cold mornings, and
+            seasonal weather so drivers can stay more comfortable and keep their
+            vehicles ready throughout the year.
           </p>
 
           <div className="mt-8 hidden gap-4 md:grid md:grid-cols-2">
@@ -73,14 +59,14 @@ export default function SunProtectionPage() {
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
                 Built For
               </p>
-              <p className="mt-2 text-2xl font-black">Hot shifts</p>
+              <p className="mt-2 text-2xl font-black">Year-round shifts</p>
             </div>
 
             <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
                 Focus
               </p>
-              <p className="mt-2 text-2xl font-black">Comfort + protection</p>
+              <p className="mt-2 text-2xl font-black">Comfort + readiness</p>
             </div>
           </div>
         </div>
@@ -92,13 +78,15 @@ export default function SunProtectionPage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
               Buying Guides
             </p>
+
             <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
-              Stay cooler during sunny delivery days.
+              Prepare for the weather you actually drive in.
             </h2>
           </div>
+
           <p className="max-w-xl text-base leading-7 text-slate-600">
-            Each guide focuses on products that are practical, affordable, and
-            useful for drivers who spend hours in and around their vehicles.
+            These guides combine overlapping seasonal products into a smaller
+            set of practical categories built around real delivery-driver use.
           </p>
         </div>
 
@@ -111,21 +99,13 @@ export default function SunProtectionPage() {
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-amber-300 to-sky-400" />
 
-              <div className="flex items-center justify-between gap-4">
+              <div>
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/20">
                   #{index + 1}
                 </span>
-
-                <span className="rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-orange-700 ring-1 ring-orange-200/80">
-                  {guide.status}
-                </span>
               </div>
 
-              <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-slate-400">
-                {guide.eyebrow}
-              </p>
-
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-slate-950">
                 {guide.title}
               </h3>
 
@@ -148,18 +128,22 @@ export default function SunProtectionPage() {
         <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">
           Our Recommendation Philosophy
         </p>
+
         <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
-          Simple gear that solves real hot-weather problems.
+          Practical protection for real delivery weather.
         </h2>
+
         <p className="mt-4 text-base leading-8 text-slate-600">
-          We prioritize sun protection gear that drivers are likely to keep in
-          the car and actually use: affordable, practical, easy to store, and
-          helpful during real delivery shifts.
+          We focus on weather gear that drivers are likely to keep in the
+          vehicle and actually use: compact, practical products that help with
+          heat, glare, rain, cold, and seasonal vehicle preparation without
+          creating unnecessary clutter.
         </p>
+
         <p className="mt-6 text-sm text-slate-500">
           <strong>Affiliate Disclosure:</strong> Spark Driver Hub participates in
-          the Amazon Associates Program and may earn a commission from
-          qualifying purchases at no additional cost to you.
+          the Amazon Associates Program and may earn a commission from qualifying
+          purchases at no additional cost to you.
         </p>
       </section>
 

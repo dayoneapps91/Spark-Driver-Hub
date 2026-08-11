@@ -17,13 +17,7 @@ const guides = [
     title: "Best Storage Bins for Delivery Drivers",
     description:
       "Simple bins and collapsible crates for separating grocery orders, cleaning supplies, and emergency items.",
-    href: "/tools/car-organization/best-storage-bins",
-  },
-  {
-    title: "Best Car Trash Cans",
-    description:
-      "Small trash solutions that help keep receipts, wrappers, wipes, and everyday driving mess under control.",
-    href: "/tools/car-organization/best-car-trash-cans",
+    href: "/tools/car-organization/best-storage-bins-for-delivery-drivers",
   },
   {
     title: "Best Cable Organizers",
