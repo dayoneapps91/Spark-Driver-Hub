@@ -122,14 +122,6 @@ export default function July2026NewsletterPage() {
             </span>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_24px_90px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70">
-            <img
-              src="/newsletters/july-2026-hero.png"
-              alt="July 2026 Spark Driver newsletter illustration featuring Independence Day, Spark deliveries, Express shopping orders, and soccer."
-              className="w-full rounded-2xl"
-            />
-          </div>
-
           <div className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-sm font-semibold text-slate-600">
             <span>Updated July 2026</span>
             <span>•</span>

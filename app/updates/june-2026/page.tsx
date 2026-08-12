@@ -101,14 +101,6 @@ export default function June2026NewsletterPage() {
             summer delivery safety, and upcoming sweepstakes information.
           </p>
 
-          <div className="mt-8 overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_24px_90px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70">
-            <img
-              src="/newsletters/june2026.png"
-              alt="June 2026 Spark Driver Newsletter"
-              className="w-full"
-            />
-          </div>
-
           <div className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-sm font-semibold text-slate-600">
             <span>Updated June 2026</span>
             <span>•</span>

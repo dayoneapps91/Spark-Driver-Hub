@@ -3,6 +3,12 @@ import PageHero from "../../components/PageHero";
 
 const newsletters = [
   {
+    title: "August 2026 Spark Driver Newsletter Summary",
+    description:
+      "New Spark Driver Rewards Program, pickup order changes, OnePay fuel savings, sweepstakes updates, and back-to-school traffic.",
+    href: "/updates/august-2026",
+  },
+  {
     title: "July 2026 Spark Driver Newsletter Summary",
     description:
       "Express Shopping updates, Resource Center changes, Independence Day demand, summer safety, and more.",
