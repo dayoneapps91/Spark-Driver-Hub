@@ -11,8 +11,8 @@ const heroCategories = [
 
 export default function Hero() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8 md:py-14 lg:px-10 lg:py-16">
-      <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:p-12 lg:p-14">
+    <section className="mx-auto w-full max-w-7xl px-5 pb-10 pt-0 md:px-8 md:py-14 lg:px-10 lg:py-16">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden rounded-none bg-slate-950 p-6 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:left-auto md:w-auto md:translate-x-0 md:rounded-[2.5rem] md:p-12 lg:p-14">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(251,146,60,0.26),transparent_32%)]" />
 
         <div className="relative grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -42,11 +42,6 @@ export default function Hero() {
             <h1 className="mt-4 max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl">
               Spark Driver Hub
             </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              Updates, taxes, mileage tracking, earnings tools, and resources
-              for Walmart Spark drivers.
-            </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
