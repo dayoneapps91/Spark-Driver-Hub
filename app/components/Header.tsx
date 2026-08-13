@@ -41,7 +41,10 @@ export default function Header() {
           </div>
         </a>
 
-        <nav className="hidden items-center gap-1 rounded-full bg-slate-100/80 p-1 text-sm font-bold text-slate-700 ring-1 ring-slate-200/80 lg:flex">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden items-center gap-1 rounded-full bg-slate-100/80 p-1 text-sm font-bold text-slate-700 ring-1 ring-slate-200/80 lg:flex"
+        >
           {navigationLinks.map((link) => {
             const active = isActivePath(pathname, link.href);
 
@@ -72,8 +75,19 @@ export default function Header() {
 
           <details className="group relative lg:hidden">
             <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-2xl border border-slate-200 bg-white text-lg font-black text-slate-950 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md [&::-webkit-details-marker]:hidden">
-              <span className="group-open:hidden">☰</span>
-              <span className="hidden group-open:inline">×</span>
+              <span className="sr-only group-open:hidden">
+                Open navigation menu
+              </span>
+              <span className="sr-only hidden group-open:inline">
+                Close navigation menu
+              </span>
+
+              <span aria-hidden="true" className="group-open:hidden">
+                ☰
+              </span>
+              <span aria-hidden="true" className="hidden group-open:inline">
+                ×
+              </span>
             </summary>
 
             <div className="absolute right-0 mt-4 w-[15rem]w-hidden rounded-[2rem] border border-white/80 bg-white/95 p-3 shadow-[0_32px_100px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 backdrop-blur-xl">
@@ -83,7 +97,7 @@ export default function Header() {
                 </p>
               </div>
 
-              <nav className="mt-3 grid gap-1">
+              <nav aria-label="Mobile navigation" className="mt-3 grid gap-1">
                 {navigationLinks.map((link) => {
                   const active = isActivePath(pathname, link.href);
 
@@ -98,6 +112,7 @@ export default function Header() {
                       }`}
                     >
                       <span
+                        aria-hidden="true"
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl text-xs font-black ${
                           active
                             ? "bg-orange-600 text-white"

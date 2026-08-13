@@ -31,3 +31,9 @@ textarea,
 select {
   font: inherit;
 }
+
+:where(a, button, summary, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px #ffffff;
+}
