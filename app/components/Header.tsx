@@ -1,8 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { trackGigMilesClick } from "../lib/analytics";
+import { trackGigMilesPlayClick } from "../lib/analytics";
 import { navigationLinks } from "../lib/navigation";
+
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.eduardo.sparkmileagetracker";
 
 const navIcons: Record<string, string> = {
   Home: "⌂",
@@ -66,8 +69,10 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="/gigmiles"
-            onClick={() => trackGigMilesClick("header_desktop")}
+            href={googlePlayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackGigMilesPlayClick("header_desktop", googlePlayUrl)}
             className="hidden rounded-full bg-gradient-to-r from-blue-700 to-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-700/20 transition duration-200 hover:-translate-y-0.5 hover:from-orange-600 hover:to-orange-500 hover:shadow-orange-600/20 sm:inline-flex"
           >
             Get GigMiles
@@ -128,8 +133,10 @@ export default function Header() {
                 })}
 
                 <a
-                  href="/gigmiles"
-                  onClick={() => trackGigMilesClick("header_mobile_menu")}
+                  href={googlePlayUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGigMilesPlayClick("header_mobile_menu", googlePlayUrl)}
                   className="mx-auto mt-3 flex w-[12.5rem] items-center justify-center rounded-2xl bg-gradient-to-r from-orange-600 to-orange-500 px-4 py-3 text-sm font-black text-white shadow-lg shadow-orange-600/20 transition duration-200 hover:-translate-y-0.5 hover:from-orange-500 hover:to-orange-400"
                 >
                   Download GigMiles →
