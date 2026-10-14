@@ -1,125 +1,87 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-
-const googlePlayUrl =
-  "https://play.google.com/store/apps/details?id=com.eduardo.sparkmileagetracker";
-
+import GigMilesPlayButton from "../components/GigMilesPlayButton";
 export const metadata: Metadata = {
   title: "GigMiles Mileage Tracker for Spark and Gig Drivers",
   description:
-    "GigMiles helps Spark, DoorDash, Uber, Instacart, Amazon Flex, and other gig drivers track mileage, shifts, earnings, expenses, and tax-ready records.",
+    "Track mileage, shifts, earnings, expenses, and work photos with GigMiles for Spark and other gig drivers. Free plan available for Android.",
 };
-
 const features = [
-  {
-    title: "Mileage tracking",
-    text: "Track business miles for Spark and other gig work so your records are easier to review later.",
-  },
-  {
-    title: "Shift history",
-    text: "Save work sessions, miles, hours, breaks, earnings, and notes in one organized history.",
-  },
-  {
-    title: "Expense tracking",
-    text: "Record fuel, maintenance, supplies, and other driving expenses throughout the year.",
-  },
-  {
-    title: "Earnings stats",
-    text: "Review daily, weekly, monthly, and yearly totals so you can understand real driving results.",
-  },
-  {
-    title: "Multi-gig support",
-    text: "Use GigMiles for Spark, DoorDash, Uber, Instacart, Amazon Flex, medical courier work, and more.",
-  },
-  {
-    title: "Tax-season records",
-    text: "Keep mileage, earnings, expenses, and shift records organized before tax season arrives.",
-  },
+  { title: "Smart Mileage Tracking", text: "Start your shift, then let GigMiles track your business miles automatically. Pause or end the shift when you need to.", premium: true },
+  { title: "Work Location Reminders", text: "Get a reminder to start tracking when you arrive at a saved work location.", premium: true },
+  { title: "Quick Proof", text: "Capture work photos stamped with the date, time, gig, and available location or address.", premium: true },
+  { title: "Driver Vault", text: "Keep shift notes, incident details, and work photos together. Sync Vault photos across signed-in devices.", premium: true },
+  { title: "Expenses and receipts", text: "Record work expenses and attach receipt photos. Signed-in account sync helps keep your records available across devices.", premium: false },
+  { title: "Shift records and CSV exports", text: "Review mileage, hours, earnings, and shift history. Export your records as CSV files when you need them.", premium: false },
 ];
 
 const supportedApps = [
-  "Walmart Spark",
-  "DoorDash",
-  "Uber",
-  "Uber Eats",
-  "Instacart",
-  "Amazon Flex",
-  "Medical Courier",
-  "Multi-app drivers",
+  "Spark", "DoorDash", "Uber Eats", "Uber", "Lyft", "Amazon Flex",
+  "Instacart", "Roadie", "Shipt", "Grubhub", "Favor", "Custom gigs",
 ];
 
 const screenshots = [
   {
-    title: "Track every mile",
-    description:
-      "Start a shift, pause for breaks, and save business mileage for each work session.",
-    src: "/images/gigmiles/screen 1.png",
-    alt: "GigMiles shift screen showing mileage and work time tracking.",
+    "title": "Your gig work, organized",
+    "description": "Keep mileage, shifts, earnings, and expenses together.",
+    "src": "/images/gigmiles/v132/01-home.png",
+    "alt": "GigMiles home screen showing shift controls and quick actions."
   },
   {
-    title: "Review every shift",
-    description:
-      "See mileage, earnings, work hours, and shift history by week.",
-    src: "/images/gigmiles/gigmileshistoryscreen.png",
-    alt: "GigMiles history screen showing weekly shifts, earnings, miles, and hours.",
+    "title": "You drive. GigMiles tracks.",
+    "description": "Start a shift, track miles automatically, and capture Quick Proof photos with Premium.",
+    "src": "/images/gigmiles/v132/02-smart-tracking.png",
+    "alt": "GigMiles active shift showing Smart Mileage Tracking and the Quick Proof button."
   },
   {
-    title: "Built for every gig",
-    description:
-      "Filter history by gig app so Spark, DoorDash, Uber, Instacart, and other work stays organized.",
-    src: "/images/gigmiles/multi gig histroy screen  2.png",
-    alt: "GigMiles multi-gig history screen showing supported gig app filters.",
+    "title": "Remember to start tracking",
+    "description": "Premium reminders help you start tracking at saved work locations.",
+    "src": "/images/gigmiles/v132/03-work-reminders.png",
+    "alt": "GigMiles Work Location Reminders screen with saved work locations."
   },
   {
-    title: "Review mileage records",
-    description:
-      "Review mileage history and saved driving records when you need them.",
-    src: "/images/gigmiles/MILEAGE SCREEN.png",
-    alt: "GigMiles mileage screen showing mileage history and saved records.",
+    "title": "Keep shift evidence together",
+    "description": "Organize shift notes, incident details, and work photos in your Premium Driver Vault.",
+    "src": "/images/gigmiles/v132/04-driver-vault.png",
+    "alt": "GigMiles shift Vault showing notes, incident documentation, and photos."
   },
+  {
+    "title": "Keep expenses and receipts together",
+    "description": "Log work costs and attach receipt photos for easier record keeping.",
+    "src": "/images/gigmiles/v132/05-expenses.png",
+    "alt": "GigMiles expenses screen showing expense totals and a receipt photo."
+  },
+  {
+    "title": "See what your work earns",
+    "description": "Review your mileage, work time, and earnings over time.",
+    "src": "/images/gigmiles/v132/06-stats.png",
+    "alt": "GigMiles statistics screen showing daily, weekly, monthly, and yearly earnings."
+  },
+  {
+    "title": "Know your numbers each shift",
+    "description": "Review miles, hours, earnings, and earnings per mile for a saved shift.",
+    "src": "/images/gigmiles/v132/07-shift-details.png",
+    "alt": "GigMiles shift details screen showing miles, hours, and earnings."
+  },
+  {
+    "title": "Keep records ready for tax time",
+    "description": "Review business mileage and export mileage and expense CSV files.",
+    "src": "/images/gigmiles/v132/08-mileage-export.png",
+    "alt": "GigMiles mileage screen showing mileage records and a CSV export button."
+  }
 ];
 
 const faqs = [
-  {
-    question: "Is GigMiles free?",
-    answer:
-      "GigMiles can be used for free, which makes it useful for casual gig drivers who want to start organizing mileage, shifts, earnings, and expenses without paying first.",
-  },
-  {
-    question: "Who is GigMiles for?",
-    answer:
-      "GigMiles is built for gig workers, including Walmart Spark drivers, DoorDash drivers, Uber drivers, Instacart shoppers, Amazon Flex drivers, medical couriers, and multi-app drivers.",
-  },
-  {
-    question: "Can I track expenses?",
-    answer:
-      "Yes. GigMiles includes expense tracking for common driving costs like fuel, maintenance, supplies, and other work-related expenses.",
-  },
-  {
-    question: "Can I track more than Spark?",
-    answer:
-      "Yes. GigMiles can be used for multiple gig apps, so you can keep different driving work organized in one place.",
-  },
-  {
-    question: "Is GigMiles useful for tax season?",
-    answer:
-      "Yes. The goal is to help drivers keep cleaner mileage, shift, earnings, and expense records throughout the year instead of rebuilding everything later.",
-  },
+  { question: "What is included in the Free plan?", answer: "Free includes up to 7 shifts and 3 expenses per month, unlimited vehicles and gigs, CSV export, and automatic signed-in account sync." },
+  { question: "What does Premium add?", answer: "Premium includes unlimited shifts and expenses, Smart Mileage Tracking, Work Location Reminders, Driver Vault, and Quick Proof. Check the app for current subscription pricing." },
+  { question: "Does Smart Mileage Tracking start my shift automatically?", answer: "You start the shift yourself. With Smart Mileage Tracking enabled, GigMiles then tracks business miles automatically during your shift. You can pause or end it yourself. Work Location Reminders can remind you to start at a saved work location." },
+  { question: "Is GigMiles only for Spark drivers?", answer: "No. GigMiles supports records for Spark, DoorDash, Uber Eats, Uber, Lyft, Amazon Flex, Instacart, Roadie, Shipt, Grubhub, Favor, and custom gigs." },
+  { question: "Can I access my records on another device?", answer: "Yes. GigMiles supports automatic signed-in account sync and multiple devices, including synced expense receipt photos and Driver Vault photos." },
+  { question: "What does Quick Proof put on a photo?", answer: "Quick Proof stamps work photos with the date, time, gig, and available location or address. It is included in Premium." },
 ];
 
-function AppStoreButton({ className = "" }: { className?: string }) {
-  return (
-    <a
-      href={googlePlayUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-2xl bg-orange-500 px-6 py-3 text-center text-sm font-black text-slate-950 shadow-lg shadow-orange-950/20 transition duration-200 hover:-translate-y-0.5 hover:bg-orange-400 ${className}`}
-    >
-      Get GigMiles on Google Play
-    </a>
-  );
-}
+
 
 function Card({
   title,
@@ -138,20 +100,17 @@ function Card({
     </section>
   );
 }
-
 export default function GigMilesPage() {
   return (
     <main className="bg-slate-50">
       <section className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8 md:py-14 lg:px-10 lg:py-16">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] md:p-12 lg:p-14">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.24),transparent_32%)]" />
-
           <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_460px]">
             <div>
               <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-slate-950">
                 GigMiles
               </span>
-
               <div className="mt-6 flex items-center gap-4">
                 <Image
                   src="/images/gigmiles/gigmileslogo.png"
@@ -166,24 +125,19 @@ export default function GigMilesPage() {
                     Mileage tracker for gig drivers
                   </p>
                   <p className="mt-1 text-sm font-black text-emerald-300">
-                    Free plan available for casual drivers
+                    Android app · Free plan available
                   </p>
                 </div>
               </div>
-
               <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl">
-                Mileage tracking made simple for gig drivers.
+                Your gig work. Organized.
               </h1>
-
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                GigMiles helps drivers track mileage, expenses, earnings, work
-                hours, shifts, deductions, and tax-ready records in one simple app.
-                Use it for Spark, DoorDash, Uber, Instacart, Amazon Flex, medical
-                courier work, and other gig apps.
+                Track miles, shifts, earnings, expenses, and work photos in one app.
+                Built for Spark drivers and useful across your other gigs, too.
               </p>
-
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <AppStoreButton />
+                <GigMilesPlayButton location="hero" />
                 <a
                   href="#screenshots"
                   className="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-black text-white ring-1 ring-white/15 transition duration-200 hover:-translate-y-0.5 hover:bg-white/15"
@@ -191,7 +145,6 @@ export default function GigMilesPage() {
                   View screenshots
                 </a>
               </div>
-
               <div className="mt-8 hidden gap-4 sm:grid sm:grid-cols-3">
                 {["Mileage", "Earnings", "Expenses"].map((label) => (
                   <div
@@ -210,13 +163,12 @@ export default function GigMilesPage() {
                 ))}
               </div>
             </div>
-
             <div className="rounded-3xl bg-white/10 p-3 shadow-2xl ring-1 ring-white/15">
               <Image
-                src="/images/gigmiles/gigmiles banner.png"
-                alt="GigMiles app banner showing mileage, shift, earnings, and deductions screens."
-                width={1600}
-                height={900}
+                src="/images/gigmiles/v132/feature-graphic.png"
+                alt="GigMiles showing mileage tracking, expenses, and Driver Vault."
+                width={1024}
+                height={500}
                 className="h-auto w-full rounded-2xl"
                 priority
               />
@@ -224,39 +176,34 @@ export default function GigMilesPage() {
           </div>
         </div>
       </section>
-
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
-          <Card title="Free for casual gig drivers">
+          <Card title="Start free. Add more when you need it.">
             <p>
-              GigMiles is useful even if you only drive part-time or casually.
-              You can start organizing mileage, shifts, earnings, and expenses
-              without committing to a paid tool right away.
+              Start with up to 7 shifts and 3 expenses per month, unlimited vehicles
+              and gigs, CSV export, and automatic signed-in account sync.
             </p>
             <p className="mt-5">
-              If you drive more often or want more room to grow, Premium is
-              available for drivers who need expanded tracking and long-term
-              record keeping.
+              Premium adds unlimited shifts and expenses, Smart Mileage Tracking,
+              Work Location Reminders, Driver Vault, and Quick Proof.
             </p>
           </Card>
-
           <section className="relative overflow-hidden rounded-[2rem] bg-blue-50 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-blue-100 sm:p-8">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
             <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Quick fit
             </p>
             <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
-              Good for Spark. Useful for every gig.
+              Built for Spark. Ready for your other gigs.
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-700">
               Use one app to keep Spark and other gig work organized instead of
               trying to remember miles, shifts, expenses, and pay later.
             </p>
-            <AppStoreButton className="mt-6 w-full" />
+            <GigMilesPlayButton location="quick_fit" className="mt-6 w-full" />
           </section>
         </div>
       </section>
-
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10">
           <div className="max-w-3xl">
@@ -271,7 +218,6 @@ export default function GigMilesPage() {
               complicated setup.
             </p>
           </div>
-
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {features.map((feature) => (
               <div
@@ -290,7 +236,6 @@ export default function GigMilesPage() {
           </div>
         </div>
       </section>
-
       <section
         id="screenshots"
         className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10"
@@ -303,40 +248,30 @@ export default function GigMilesPage() {
             See how GigMiles keeps driving records organized.
           </h2>
           <p className="mt-4 text-lg leading-8 text-slate-600">
-            Use GigMiles to track shifts, mileage, breaks, earnings, expenses,
-            and multi-app driving history.
+            Explore the current app, from your first shift to synced receipts
+            and work photos.
           </p>
         </div>
-
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {screenshots.map((screenshot) => (
             <div
               key={screenshot.title}
               className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.14)]"
             >
-              <div className="p-6 xl:min-h-[170px]">
-                <h3 className="text-xl font-black text-slate-950">
-                  {screenshot.title}
-                </h3>
-                <p className="mt-2 text-base leading-7 text-slate-600">
-                  {screenshot.description}
-                </p>
-              </div>
-
-              <div className="mt-auto flex h-96 items-center justify-center bg-slate-950 p-4 sm:h-[32rem] xl:h-80">
+              <div className="mt-auto bg-slate-950 p-3">
                 <Image
                   src={screenshot.src}
                   alt={screenshot.alt}
-                  width={1200}
-                  height={1800}
-                  className="max-h-full w-auto max-w-full rounded-2xl object-contain"
+                  width={1080}
+                  height={1920}
+                  sizes="(min-width: 1280px) 280px, (min-width: 768px) 45vw, 90vw"
+                  className="h-auto w-full rounded-2xl"
                 />
               </div>
             </div>
           ))}
         </div>
       </section>
-
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:px-8 sm:py-16 lg:grid-cols-[1fr_420px] lg:items-center lg:px-10">
           <div>
@@ -351,7 +286,6 @@ export default function GigMilesPage() {
               shifts organized so Spark, DoorDash, Uber, Instacart, Amazon Flex,
               and other work do not blur together.
             </p>
-
             <div className="mt-8 flex flex-wrap gap-3">
               {supportedApps.map((app) => (
                 <span
@@ -363,19 +297,18 @@ export default function GigMilesPage() {
               ))}
             </div>
           </div>
-
           <div className="flex h-96 items-center justify-center overflow-hidden rounded-[2rem] bg-slate-950 p-4 shadow-[0_24px_80px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 sm:h-[32rem] lg:h-96">
             <Image
-              src="/images/gigmiles/multi gig histroy screen  2.png"
-              alt="GigMiles multi-app history filter showing Spark, DoorDash, Uber, Amazon Flex, Instacart, and medical courier options."
-              width={1200}
-              height={1800}
-              className="max-h-full w-auto max-w-full rounded-2xl object-contain"
+              src="/images/gigmiles/v132/07-shift-details.png"
+              alt="GigMiles saved shift showing the gig, mileage, hours, and earnings."
+              width={1080}
+              height={1920}
+              sizes="(min-width: 1280px) 280px, (min-width: 768px) 45vw, 90vw"
+                  className="max-h-full w-auto max-w-full rounded-2xl object-contain"
             />
           </div>
         </div>
       </section>
-
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 sm:py-16 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-2">
           <section className="relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70 sm:p-8">
@@ -387,40 +320,39 @@ export default function GigMilesPage() {
               Start without paying.
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-700">
-              The free version is a strong starting point for casual gig drivers
-              who want to organize basic mileage, earnings, expenses, and shift
-              records.
+              Build a record-keeping habit with the Free plan. No subscription
+              is needed for these features.
             </p>
             <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700">
-              <li>✓ Useful for casual or part-time drivers</li>
-              <li>✓ Start tracking mileage and shifts</li>
-              <li>✓ Organize expenses and earnings</li>
-              <li>✓ Upgrade only when you need more</li>
+              <li>✓ Up to 7 shifts per month</li>
+              <li>✓ Up to 3 expenses per month</li>
+              <li>✓ Unlimited vehicles and gigs</li>
+              <li>✓ CSV export</li>
+              <li>✓ Automatic signed-in account sync</li>
             </ul>
           </section>
-
           <section className="relative overflow-hidden rounded-[2rem] bg-blue-50 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-blue-100 sm:p-8">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400" />
             <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
               Premium
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">
-              Grow when your driving grows.
+              Track more. Keep more together.
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-700">
-              Premium is for drivers who want expanded tracking and cleaner
-              long-term records as their gig work becomes more active.
+              Get unlimited tracking and tools that help you remember your miles
+              and organize your work documentation. See current pricing in the app.
             </p>
             <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700">
-              <li>✓ Better for frequent gig drivers</li>
-              <li>✓ More room for long-term history</li>
-              <li>✓ Helps keep records organized year-round</li>
-              <li>✓ Built for drivers who track consistently</li>
+              <li>✓ Unlimited shifts and expenses</li>
+              <li>✓ Smart Mileage Tracking</li>
+              <li>✓ Work Location Reminders</li>
+              <li>✓ Driver Vault</li>
+              <li>✓ Quick Proof stamped work photos</li>
             </ul>
           </section>
         </div>
       </section>
-
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 sm:py-16">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-blue-700">
@@ -429,7 +361,6 @@ export default function GigMilesPage() {
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
             Frequently asked questions
           </h2>
-
           <div className="mt-8 space-y-5">
             {faqs.map((faq) => (
               <div
@@ -447,7 +378,6 @@ export default function GigMilesPage() {
           </div>
         </div>
       </section>
-
       <section className="mx-auto max-w-5xl px-5 py-12 md:px-8 sm:py-16">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-6 text-white shadow-[0_32px_120px_rgba(15,23,42,0.22)] sm:p-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.24),transparent_32%)]" />
@@ -461,11 +391,11 @@ export default function GigMilesPage() {
                   Ready to organize your driving records?
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
-                  Start tracking mileage, shifts, earnings, expenses, and
-                  tax-ready records with GigMiles.
+                  Keep your mileage, shifts, earnings, and expenses together
+                  with GigMiles.
                 </p>
               </div>
-              <AppStoreButton className="bg-blue-600 hover:bg-blue-500" />
+              <GigMilesPlayButton location="footer" />
             </div>
           </div>
         </div>
