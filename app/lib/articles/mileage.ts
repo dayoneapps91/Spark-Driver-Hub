@@ -1,5 +1,4 @@
 import { ArticleData } from "./types";
-
 export const mileageArticles: ArticleData[] = [
   {
   slug: "best-mileage-tracker-for-spark-drivers",
@@ -7,7 +6,7 @@ export const mileageArticles: ArticleData[] = [
   description:
     "A practical guide to choosing a mileage tracker for Walmart Spark drivers, keeping cleaner records, and understanding real profit after miles, gas, and vehicle costs.",
   category: "Mileage",
-  lastUpdated: "June 2026",
+  lastUpdated: "October 2026",
   readingTime: "14 min read",
   intro:
     "The best mileage tracker for Spark drivers is the one that helps you consistently record work miles, connect those miles to earnings, and stay organized before tax season. Spark driving can look profitable when you only look at payout totals, but real profit depends on mileage, gas, maintenance, time, and how well you keep records.",
@@ -44,10 +43,13 @@ export const mileageArticles: ArticleData[] = [
     {
       heading: "Where GigMiles fits",
       body: [
-      "GigMiles fits best for Spark drivers who want mileage, expenses, earnings, shifts, and notes in one simple workflow instead of scattered across screenshots, receipts, and memory.",
-      "For Spark drivers, the value is not just counting miles. The value is seeing miles next to earnings and expenses so you can judge real profit after the shift is over.",
-      "That makes GigMiles a strong option for drivers who want a practical gig-focused record system without turning every delivery day into complicated bookkeeping."
-    ],
+        "Disclosure: Spark Driver Hub is operated by the developer of GigMiles. This guide explains how to choose a tracker and where our Android app fits your workflow; it is not an independent ranking of competing apps.",
+        "GigMiles brings mileage, shifts, earnings, expenses, and receipt photos together. Review a saved shift to see your miles, work time, earnings, and earnings per mile, then use history, statistics, and CSV exports to review your records.",
+        "If you forget to record miles during a busy shift, Smart Mileage Tracking can help: start your shift yourself, then GigMiles tracks business miles automatically. Pause or end the shift when needed. Work Location Reminders can remind you to start tracking when you arrive at a saved work location.",
+        "For work documentation, Driver Vault keeps shift notes, incident details, and photos together. Quick Proof captures work photos stamped with the date, time, gig, and available location or address. Signed-in account sync supports multiple devices, including synced expense receipt photos and Vault photos.",
+        "The Free plan includes up to 7 shifts and 3 expenses per month, unlimited vehicles and gigs, CSV export, and automatic signed-in account sync. Premium adds unlimited shifts and expenses, Smart Mileage Tracking, Work Location Reminders, Driver Vault, and Quick Proof. Check the app for current subscription pricing.",
+        "GigMiles is built for Spark drivers, but also supports records for other gig platforms and custom gigs. Choose it if you want shift-based mileage and work records together, and review your saved miles regularly to keep the log accurate."
+      ],
     },
     {
       heading: "Final recommendation",
@@ -484,3 +486,4 @@ export const mileageArticles: ArticleData[] = [
   ],
   }
 ];
+

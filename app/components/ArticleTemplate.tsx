@@ -1,18 +1,16 @@
 import Link from "next/link";
 import { getArticleBySlug, getRelatedArticles } from "../lib/articles";
 import GigMilesCTA from "./GigMilesCTA";
-
+import GigMilesArticleCTA from "./GigMilesArticleCTA";
 type ArticleTemplateProps = {
   slug: string;
 };
-
 const strongGigMilesCategories = new Set([
   "Mileage",
   "Taxes",
   "Expenses",
   "Earnings",
 ]);
-
 const softGigMilesSlugs = new Set([
   "spark-peak-hours",
   "spark-slow-days",
@@ -22,15 +20,12 @@ const softGigMilesSlugs = new Set([
   "spark-shopping-vs-curbside-orders",
   "spark-driver-acceptance-rate",
 ]);
-
 function shouldShowStrongGigMilesCTA(category: string) {
   return strongGigMilesCategories.has(category);
 }
-
 function shouldShowSoftGigMilesCTA(slug: string) {
   return softGigMilesSlugs.has(slug);
 }
-
 function SoftGigMilesCTA() {
   return (
     <section className="relative overflow-hidden rounded-[2rem] bg-slate-950 p-6 shadow-[0_28px_90px_rgba(15,23,42,0.22)] sm:p-8">
@@ -68,10 +63,8 @@ function SoftGigMilesCTA() {
     </section>
   );
 }
-
 export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
   const article = getArticleBySlug(slug);
-
   if (!article) {
     return (
       <main className="mx-auto max-w-4xl px-6 py-16">
@@ -84,20 +77,17 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
       </main>
     );
   }
-
   const relatedArticles = getRelatedArticles(article.relatedSlugs);
+  const isMileageTrackerArticle = article.slug === "best-mileage-tracker-for-spark-drivers";
   const showStrongGigMilesCTA = shouldShowStrongGigMilesCTA(article.category);
   const showSoftGigMilesCTA =
     !showStrongGigMilesCTA && shouldShowSoftGigMilesCTA(article.slug);
-
   return (
     <main className="bg-slate-50">
       <div className="fixed left-0 top-0 z-50 h-1 w-full bg-gradient-to-r from-orange-400 via-amber-300 to-blue-500" />
-
       <article>
         <header className="relative isolate overflow-hidden bg-slate-950">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.30),transparent_34%),radial-gradient(circle_at_top_right,rgba(249,115,22,0.24),transparent_30%),linear-gradient(135deg,#020617_0%,#0f172a_50%,#111827_100%)]" />
-
           <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16 lg:py-20">
             <nav className="mb-10 flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-300">
               <Link href="/" className="transition hover:text-white">
@@ -110,19 +100,15 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
               <span className="text-slate-500">/</span>
               <span className="text-slate-400">{article.category}</span>
             </nav>
-
             <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-blue-100 backdrop-blur">
               {article.category}
             </div>
-
             <h1 className="mt-6 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">
               {article.title}
             </h1>
-
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl sm:leading-9">
               {article.description}
             </p>
-
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-slate-100 backdrop-blur">
                 Updated {article.lastUpdated}
@@ -133,7 +119,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
             </div>
           </div>
         </header>
-
         <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-start">
             <div className="min-w-0">
@@ -142,7 +127,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
                   {article.intro}
                 </p>
               </section>
-
               {article.quickAnswer && (
                 <section className="mt-8 rounded-[2rem] bg-emerald-50 p-6 shadow-[0_18px_60px_rgba(6,95,70,0.08)] ring-1 ring-emerald-100 sm:p-8">
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-700">
@@ -153,7 +137,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
                   </p>
                 </section>
               )}
-
               {article.disclaimer && (
                 <section className="mt-8 rounded-[2rem] bg-amber-50 p-6 shadow-[0_18px_60px_rgba(146,64,14,0.08)] ring-1 ring-amber-100 sm:p-8">
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700">
@@ -164,7 +147,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
                   </p>
                 </section>
               )}
-
               <div className="mt-12 grid gap-12">
                 {article.sections.map((section, index) => (
                   <section
@@ -179,7 +161,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
                         {section.heading}
                       </h2>
                     </div>
-
                     <div className="grid gap-5">
                       {section.body.map((paragraph) => (
                         <p
@@ -190,16 +171,19 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
                         </p>
                       ))}
                     </div>
+                    {isMileageTrackerArticle && section.heading === "Where GigMiles fits" && (
+                      <div className="mt-8">
+                        <GigMilesArticleCTA />
+                      </div>
+                    )}
                   </section>
                 ))}
               </div>
-
-              {(showStrongGigMilesCTA || showSoftGigMilesCTA) && (
+              {!isMileageTrackerArticle && (showStrongGigMilesCTA || showSoftGigMilesCTA) && (
                 <div className="mt-12">
                   {showStrongGigMilesCTA ? <GigMilesCTA /> : <SoftGigMilesCTA />}
                 </div>
               )}
-
               {article.sources && article.sources.length > 0 && (
                 <section className="mt-12 rounded-[2rem] bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/70 sm:p-8">
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">
@@ -237,7 +221,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
                 </section>
               )}
             </div>
-
             <aside className="hidden lg:block">
               <div className="sticky top-24 rounded-[2rem] bg-white p-5 shadow-[0_18px_60px_rgba(15,23,42,0.07)] ring-1 ring-slate-200/70">
                 <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">
@@ -258,7 +241,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
           </div>
         </div>
       </article>
-
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
@@ -271,7 +253,6 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
               </h2>
             </div>
           </div>
-
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {relatedArticles.map((related) => (
               <Link
@@ -296,3 +277,4 @@ export default function ArticleTemplate({ slug }: ArticleTemplateProps) {
     </main>
   );
 }
+
